@@ -10,6 +10,6 @@ class AudioWaveform extends StatefulWidget {
 class _AudioWaveformState extends State<AudioWaveform> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Placeholder( );
   }
 }
