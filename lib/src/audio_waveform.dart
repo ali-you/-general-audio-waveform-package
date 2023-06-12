@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
-class AudioWaveform extends StatefulWidget {
-  const AudioWaveform({Key? key}) : super(key: key);
+class AudioWaveform {
+  final double _duration;
 
-  @override
-  State<AudioWaveform> createState() => _AudioWaveformState();
-}
+  AudioWaveform(this._duration);
 
-class _AudioWaveformState extends State<AudioWaveform> {
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder( );
+
+  Widget fromPath(String path){
+    return Container();
   }
+
 }
