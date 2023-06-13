@@ -58,12 +58,13 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: PulseWaveform(
           height: 50,
-          width: MediaQuery.of(context).size.width * 0.43 ,
+          width: MediaQuery.of(context).size.width * 0.43,
           maxDuration: const Duration(seconds: 100),
           elapsedDuration: elspadeTime,
           activeColor: Colors.redAccent,
           borderWidth: 3,
           inactiveColor: Colors.black,
+          // inactiveBorderColor: Colors.blue,
           samples: const [-0.062317353988907675,
 
             -0.4598192859194377,
