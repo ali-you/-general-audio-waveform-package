@@ -14,6 +14,10 @@ and the Flutter guide for
 TODO: Put a short description of the package here that helps potential users
 know whether this package might be useful for them.
 
+# Audio Waveforms
+
+Use this package to generate waveforms of audio files.
+
 ## Features
 
 TODO: List what your package can do. Maybe include images, gifs, or videos.
