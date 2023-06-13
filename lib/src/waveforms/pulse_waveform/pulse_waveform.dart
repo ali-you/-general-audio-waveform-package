@@ -34,12 +34,13 @@ class PulseWaveform extends AudioWaveform {
     this.activeBorderColor = Colors.white,
     this.inactiveBorderColor = Colors.white,
     super.showActiveWaveform = true,
-    super.absolute = false,
+    /// by default it is absolute. if you want to make each pulse paint in the half of its current height make it false
+    super.absolute = true,
     super.invert = false,
     this.isRoundedRectangle = false
   }) : assert(
-          borderWidth >= 0 && borderWidth <= 1.0,
-          'BorderWidth must be between 0 and 1',
+          borderWidth >= 0 && borderWidth <= 3.0,
+          'BorderWidth must be between 0 and 3',
         );
 
   /// The color of the active waveform.
@@ -86,18 +87,20 @@ class _PulseWaveformState extends AudioWaveformState<PulseWaveform> {
 
     return Stack(
       children: [
-        CustomPaint(
-          size: Size(widget.width, widget.height),
-          isComplex: true,
-          painter: PulseInActiveWaveformPainter(
-            samples: processedSamples,
-            color: widget.inactiveColor,
-            gradient: widget.inactiveGradient,
-            waveformAlignment: waveformAlignment,
-            borderColor: widget.inactiveBorderColor,
-            borderWidth: widget.borderWidth,
-            sampleWidth: sampleWidth,
-            isRoundedRectangle: widget.isRoundedRectangle,
+        RepaintBoundary(
+          child: CustomPaint(
+            size: Size(widget.width, widget.height),
+            isComplex: true,
+            painter: PulseInActiveWaveformPainter(
+              samples: processedSamples,
+              color: widget.inactiveColor,
+              gradient: widget.inactiveGradient,
+              waveformAlignment: waveformAlignment,
+              borderColor: widget.inactiveBorderColor,
+              borderWidth: widget.borderWidth,
+              sampleWidth: sampleWidth,
+              isRoundedRectangle: widget.isRoundedRectangle,
+            ),
           ),
         ),
         if (showActiveWaveform)

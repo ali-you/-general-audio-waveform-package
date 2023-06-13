@@ -4,19 +4,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfb99b1c-5055-4169-88d4-5cc3da552525" name="Changes" comment="readme and changelog added">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/example/.gitignore" afterDir="false" />
-    </list>
+    <list default="true" id="cfb99b1c-5055-4169-88d4-5cc3da552525" name="Changes" comment="pulse waveform ui complete" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="origin/spark" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -25,30 +17,22 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2R6eaF9guLDbyP0zDwIaJgFV0GR" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "cidr.known.project.marker": "true",
-    "com.google.services.firebase.aqiPopupShown": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "last_opened_file_path": "/Users/aliyou/StudioProjects/general_audio_waveforms",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "flutter.settings",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;flutter.settings&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-    </key>
-  </component>
+}</component>
   <component name="RunManager">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
       <option name="filePath" value="$PROJECT_DIR$/example/lib/main.dart" />
@@ -78,28 +62,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686576308842</updated>
     </task>
-    <task id="LOCAL-00003" summary="package config changes">
-      <created>1686637159382</created>
+    <task id="LOCAL-00003" summary="pulse waveform edited">
+      <created>1686637111410</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1686637159382</updated>
+      <updated>1686637111410</updated>
     </task>
-    <task id="LOCAL-00004" summary="copyright added">
-      <created>1686638170467</created>
+    <task id="LOCAL-00004" summary="pulse waveform ui complete">
+      <created>1686640591920</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1686638170467</updated>
+      <updated>1686640591920</updated>
     </task>
-    <task id="LOCAL-00005" summary="readme and changelog added">
-      <created>1686639950226</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1686639950226</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -116,9 +93,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="flutter audio files added" />
     <MESSAGE value="pulse waveform added" />
-    <MESSAGE value="package config changes" />
-    <MESSAGE value="copyright added" />
-    <MESSAGE value="readme and changelog added" />
-    <option name="LAST_COMMIT_MESSAGE" value="readme and changelog added" />
+    <MESSAGE value="pulse waveform edited" />
+    <MESSAGE value="pulse waveform ui complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="pulse waveform ui complete" />
   </component>
 </project>

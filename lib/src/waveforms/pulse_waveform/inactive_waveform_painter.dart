@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:general_audio_waveforms/src/core/waveform_painters_ab.dart';
-import 'package:general_audio_waveforms/src/util/waveform_alignment.dart';
 
 ///InActiveWaveformPainter for the [PulseWaveform].
 class PulseInActiveWaveformPainter extends InActiveWaveformPainter {
