@@ -10,19 +10,17 @@ class PulseInActiveWaveformPainter extends InActiveWaveformPainter {
     super.color = Colors.white,
     super.gradient,
     required super.samples,
-    required super.waveformAlignment,
     required super.sampleWidth,
     required super.borderColor,
     required super.borderWidth,
     required this.isRoundedRectangle,
     super.style = PaintingStyle.fill,
+    required super.waveformAlignment,
   });
 
   final bool isRoundedRectangle;
-  late double heightt ;
   @override
   void paint(Canvas canvas, Size size) {
-    heightt = size.height/2;
     final paint = Paint()
       ..style = style
       ..color = color
@@ -33,24 +31,21 @@ class PulseInActiveWaveformPainter extends InActiveWaveformPainter {
       ..style = PaintingStyle.stroke
       ..color = borderColor
       ..strokeWidth = borderWidth;
-    //Gets the [alignPosition] depending on [waveformAlignment]
-    final alignPosition = waveformAlignment.getAlignPosition(size.height);
+    final alignPosition = size.height;
 
     if (isRoundedRectangle) {
       drawRoundedRectangles(
         canvas,
         alignPosition,
         paint,
-        borderPaint,
-        waveformAlignment,
+        borderPaint
       );
     } else {
       drawRegularRectangles(
         canvas,
         alignPosition,
         paint,
-        borderPaint,
-        waveformAlignment,
+        borderPaint
       );
     }
   }
@@ -61,13 +56,11 @@ class PulseInActiveWaveformPainter extends InActiveWaveformPainter {
     double alignPosition,
     Paint paint,
     Paint borderPaint,
-    WaveformAlignment waveformAlignment,
   ) {
     for (var i = 0; i < samples.length; i++) {
       final x = sampleWidth * i;
-      final y = samples[i];
-      final positionFromTop =alignPosition;
-      final rectangle = Rect.fromLTWH(x, positionFromTop , sampleWidth, y + heightt);
+      final y = -1 * samples[i].abs();
+      final rectangle = Rect.fromLTWH(x, alignPosition , sampleWidth, y );
 
       //Draws the filled rectangles of the waveform.
       canvas
@@ -83,21 +76,21 @@ class PulseInActiveWaveformPainter extends InActiveWaveformPainter {
     }
   }
 
+
+
   // ignore: long-parameter-list
   void drawRoundedRectangles(
     Canvas canvas,
     double alignPosition,
     Paint paint,
-    Paint borderPaint,
-    WaveformAlignment waveformAlignment,
+    Paint borderPaint
   ) {
     final radius = Radius.circular(sampleWidth);
     for (var i = 0; i < samples.length; i++) {
       if (i.isEven) {
         final x = sampleWidth * i;
-        final y =  samples[i] ;
-        final positionFromTop =  alignPosition - y / 2;
-        final rectangle = Rect.fromLTWH(x, positionFromTop, sampleWidth, y);
+        final y = -1 * samples[i].abs();
+        final rectangle = Rect.fromLTWH(x, alignPosition , sampleWidth, y );
         //Draws the filled rectangles of the waveform.
         canvas
           ..drawRRect(
