@@ -4,6 +4,7 @@ version: 0.0.1
 homepage: https://uvstudio.fun/
 repository: https://github.com/ali-you/general-audio-waveform-package
 documentation: https://github.com/ali-you/general-audio-waveform-package
+issue_tracker: https://github.com/ali-you/general-audio-waveform-package/issues
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
