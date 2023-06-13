@@ -33,25 +33,21 @@ class PulseActiveWaveformPainter extends ActiveWaveformPainter {
       ..style = PaintingStyle.stroke
       ..color = borderColor
       ..strokeWidth = borderWidth;
-
-    //Gets the [alignPosition] depending on [waveformAlignment]
-    final alignPosition = waveformAlignment.getAlignPosition(size.height);
+    final alignPosition = size.height;
 
     if (isRoundedRectangle) {
       drawRoundedRectangles(
         canvas,
         alignPosition,
         activeTrackPaint,
-        borderPaint,
-        waveformAlignment
+        borderPaint
       );
     } else {
       drawRegularRectangles(
         canvas,
         alignPosition,
         activeTrackPaint,
-        borderPaint,
-        waveformAlignment
+        borderPaint
       );
     }
   }
@@ -61,24 +57,20 @@ class PulseActiveWaveformPainter extends ActiveWaveformPainter {
     Canvas canvas,
     double alignPosition,
     Paint paint,
-    Paint borderPaint,
-    WaveformAlignment waveformAlignment
+    Paint borderPaint
   ) {
     for (var i = 0; i < activeSamples.length; i++) {
       final x = sampleWidth * i;
-      final isAbsolute = waveformAlignment != WaveformAlignment.center;
-      final y =
-           !isAbsolute ? activeSamples[i] * 2 : activeSamples[i];
-      final positionFromTop =!isAbsolute ? alignPosition - y / 2 : alignPosition;
+      final y = -1 * activeSamples[i].abs();
       //Draws the filled rectangles of the waveform.
       canvas
         ..drawRect(
-          Rect.fromLTWH(x, positionFromTop, sampleWidth, y),
+          Rect.fromLTWH(x, alignPosition, sampleWidth, y),
           paint,
         )
         //Draws the border for the rectangles of the waveform.
         ..drawRect(
-          Rect.fromLTWH(x, positionFromTop, sampleWidth, y),
+          Rect.fromLTWH(x, alignPosition, sampleWidth, y),
           borderPaint,
         );
     }
@@ -89,22 +81,18 @@ class PulseActiveWaveformPainter extends ActiveWaveformPainter {
     Canvas canvas,
     double alignPosition,
     Paint paint,
-    Paint borderPaint,
-    WaveformAlignment waveformAlignment
+    Paint borderPaint
   ) {
     for (var i = 0; i < activeSamples.length; i++) {
       if (i.isEven) {
         final x = sampleWidth * i;
-        final isAbsolute = waveformAlignment != WaveformAlignment.center;
-        final y = activeSamples[i];
-
-        final positionFromTop = alignPosition ;
+        final y = -1 * activeSamples[i].abs();
 
         //Draws the filled rectangles of the waveform.
         canvas
           ..drawRRect(
             RRect.fromRectAndRadius(
-              Rect.fromLTWH(x, positionFromTop, sampleWidth, y),
+              Rect.fromLTWH(x, alignPosition, sampleWidth, y),
               Radius.circular(x),
             ),
             paint,
@@ -112,7 +100,7 @@ class PulseActiveWaveformPainter extends ActiveWaveformPainter {
           //Draws the border for the rectangles of the waveform.
           ..drawRRect(
             RRect.fromRectAndRadius(
-              Rect.fromLTWH(x, positionFromTop, sampleWidth, y),
+              Rect.fromLTWH(x, alignPosition, sampleWidth, y),
               Radius.circular(x),
             ),
             borderPaint,
