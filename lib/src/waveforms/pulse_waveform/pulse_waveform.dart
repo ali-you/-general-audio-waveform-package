@@ -69,10 +69,10 @@ class PulseWaveform extends AudioWaveform {
 
   @override
   AudioWaveformState<PulseWaveform> createState() =>
-      _RectangleWaveformState();
+      _PulseWaveformState();
 }
 
-class _RectangleWaveformState extends AudioWaveformState<PulseWaveform> {
+class _PulseWaveformState extends AudioWaveformState<PulseWaveform> {
   @override
   Widget build(BuildContext context) {
     if (widget.samples.isEmpty) {
@@ -86,20 +86,18 @@ class _RectangleWaveformState extends AudioWaveformState<PulseWaveform> {
 
     return Stack(
       children: [
-        RepaintBoundary(
-          child: CustomPaint(
-            size: Size(widget.width, widget.height),
-            isComplex: true,
-            painter: PulseInActiveWaveformPainter(
-              samples: processedSamples,
-              color: widget.inactiveColor,
-              gradient: widget.inactiveGradient,
-              waveformAlignment: waveformAlignment,
-              borderColor: widget.inactiveBorderColor,
-              borderWidth: widget.borderWidth,
-              sampleWidth: sampleWidth,
-              isRoundedRectangle: widget.isRoundedRectangle,
-            ),
+        CustomPaint(
+          size: Size(widget.width, widget.height),
+          isComplex: true,
+          painter: PulseInActiveWaveformPainter(
+            samples: processedSamples,
+            color: widget.inactiveColor,
+            gradient: widget.inactiveGradient,
+            waveformAlignment: waveformAlignment,
+            borderColor: widget.inactiveBorderColor,
+            borderWidth: widget.borderWidth,
+            sampleWidth: sampleWidth,
+            isRoundedRectangle: widget.isRoundedRectangle,
           ),
         ),
         if (showActiveWaveform)
