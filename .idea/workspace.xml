@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfb99b1c-5055-4169-88d4-5cc3da552525" name="Changes" comment="pulse waveform edited">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/waveforms/pulse_waveform/active_waveform_painter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/waveforms/pulse_waveform/active_waveform_painter.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/waveforms/pulse_waveform/pulse_waveform.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/waveforms/pulse_waveform/pulse_waveform.dart" afterDir="false" />
-    </list>
+    <list default="true" id="cfb99b1c-5055-4169-88d4-5cc3da552525" name="Changes" comment="pulse waveform ui complete" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,7 +69,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686637111410</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="pulse waveform ui complete">
+      <created>1686640591920</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686640591920</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -92,6 +94,7 @@
     <MESSAGE value="flutter audio files added" />
     <MESSAGE value="pulse waveform added" />
     <MESSAGE value="pulse waveform edited" />
-    <option name="LAST_COMMIT_MESSAGE" value="pulse waveform edited" />
+    <MESSAGE value="pulse waveform ui complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="pulse waveform ui complete" />
   </component>
 </project>
