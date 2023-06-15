@@ -10,10 +10,10 @@
 /// {@end-tool}
 abstract class ScalingAlgorithm {
   /// list of samples before normalization
-  List<double> samples;
+  final List<double> samples;
 
   /// to reduce number of samples to your desired length
-  int maxSample;
+  final int maxSample;
 
   ScalingAlgorithm({required this.samples, required this.maxSample});
 

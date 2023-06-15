@@ -4,18 +4,33 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfb99b1c-5055-4169-88d4-5cc3da552525" name="Changes" comment="median algorithm for scaling added">
-      <change afterPath="$PROJECT_DIR$/lib/src/data/channel_type.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/data/extraction/wave_source.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/data/scaling/average_algorithm.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/data/scaling/median_algorithm.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/data/scaling/scaling_algorithm.dart" afterDir="false" />
+    <list default="true" id="cfb99b1c-5055-4169-88d4-5cc3da552525" name="Changes" comment="scaling algorithm bug fixed">
+      <change afterPath="$PROJECT_DIR$/lib/src/data/extraction/local_path_source.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/general-audio-waveform-package.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/general-audio-waveform-package.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/example/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/example/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/example/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/example/windows/flutter/generated_plugins.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/audio_waveform.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/audio_waveform.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/const/colors.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/core/waveform_painters_ab.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/core/waveform_painters_ab.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/data/wave_extraction_algorithm.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/data/channel_type.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/data/extraction/wave_source.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data/extraction/wave_source.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/data/scaling/scaling_algorithm.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data/scaling/scaling_algorithm.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686650634363</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="scaling algorithm bug fixed">
+      <created>1686808331532</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686808331532</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -129,6 +151,7 @@
     <MESSAGE value="pulse waveform ui complete" />
     <MESSAGE value="average algorithm for normalization added" />
     <MESSAGE value="median algorithm for scaling added" />
-    <option name="LAST_COMMIT_MESSAGE" value="median algorithm for scaling added" />
+    <MESSAGE value="scaling algorithm bug fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="scaling algorithm bug fixed" />
   </component>
 </project>

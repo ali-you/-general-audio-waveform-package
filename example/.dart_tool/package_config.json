@@ -44,6 +44,18 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "ffmpeg_kit_flutter",
+      "rootUri": "file:///home/aliyou/.pub-cache/hosted/pub.dev/ffmpeg_kit_flutter-5.1.0-LTS",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "ffmpeg_kit_flutter_platform_interface",
+      "rootUri": "file:///home/aliyou/.pub-cache/hosted/pub.dev/ffmpeg_kit_flutter_platform_interface-0.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///home/aliyou/snap/flutter/common/flutter/packages/flutter",
       "packageUri": "lib/",
@@ -104,6 +116,42 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "permission_handler",
+      "rootUri": "file:///home/aliyou/.pub-cache/hosted/pub.dev/permission_handler-10.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
+      "name": "permission_handler_android",
+      "rootUri": "file:///home/aliyou/.pub-cache/hosted/pub.dev/permission_handler_android-10.2.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
+      "name": "permission_handler_apple",
+      "rootUri": "file:///home/aliyou/.pub-cache/hosted/pub.dev/permission_handler_apple-9.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
+      "name": "permission_handler_platform_interface",
+      "rootUri": "file:///home/aliyou/.pub-cache/hosted/pub.dev/permission_handler_platform_interface-3.10.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
+      "name": "permission_handler_windows",
+      "rootUri": "file:///home/aliyou/.pub-cache/hosted/pub.dev/permission_handler_windows-0.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "plugin_platform_interface",
+      "rootUri": "file:///home/aliyou/.pub-cache/hosted/pub.dev/plugin_platform_interface-2.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///home/aliyou/snap/flutter/common/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -152,13 +200,19 @@
       "languageVersion": "2.14"
     },
     {
+      "name": "wav",
+      "rootUri": "file:///home/aliyou/.pub-cache/hosted/pub.dev/wav-1.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
       "name": "example",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-06-12T12:29:26.877444Z",
+  "generated": "2023-06-15T08:29:04.528077Z",
   "generator": "pub",
   "generatorVersion": "3.0.2"
 }

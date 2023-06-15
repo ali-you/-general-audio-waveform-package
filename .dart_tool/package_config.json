@@ -38,6 +38,18 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "ffmpeg_kit_flutter",
+      "rootUri": "file:///home/aliyou/.pub-cache/hosted/pub.dev/ffmpeg_kit_flutter-5.1.0-LTS",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "ffmpeg_kit_flutter_platform_interface",
+      "rootUri": "file:///home/aliyou/.pub-cache/hosted/pub.dev/ffmpeg_kit_flutter_platform_interface-0.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///home/aliyou/snap/flutter/common/flutter/packages/flutter",
       "packageUri": "lib/",
@@ -92,6 +104,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "plugin_platform_interface",
+      "rootUri": "file:///home/aliyou/.pub-cache/hosted/pub.dev/plugin_platform_interface-2.1.4",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///home/aliyou/snap/flutter/common/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -140,13 +158,19 @@
       "languageVersion": "2.14"
     },
     {
+      "name": "wav",
+      "rootUri": "file:///home/aliyou/.pub-cache/hosted/pub.dev/wav-1.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
+    },
+    {
       "name": "general_audio_waveforms",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-06-12T11:16:56.174907Z",
+  "generated": "2023-06-15T06:52:36.661541Z",
   "generator": "pub",
   "generatorVersion": "3.0.2"
 }
