@@ -4,12 +4,18 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfb99b1c-5055-4169-88d4-5cc3da552525" name="Changes" comment="pulse waveform ui complete">
+    <list default="true" id="cfb99b1c-5055-4169-88d4-5cc3da552525" name="Changes" comment="median algorithm for scaling added">
+      <change afterPath="$PROJECT_DIR$/lib/src/data/channel_type.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/data/extraction/wave_source.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/data/scaling/average_algorithm.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/data/scaling/median_algorithm.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/data/scaling/scaling_algorithm.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/audio_waveform.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/audio_waveform.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/data/test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data/wave_extraction_algorithm.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/waveforms/pulse_waveform/inactive_waveform_painter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/waveforms/pulse_waveform/inactive_waveform_painter.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/const/colors.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/core/waveform_painters_ab.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/core/waveform_painters_ab.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/data/wave_extraction_algorithm.dart" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,18 +33,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "cidr.known.project.marker": "true",
-    "com.google.services.firebase.aqiPopupShown": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "settings.editor.selected.configurable": "flutter.settings",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/aliyou/StudioProjects/general-audio-waveform-package/example&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;flutter.settings&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/src/data/scaling" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
       <option name="filePath" value="$PROJECT_DIR$/example/lib/main.dart" />
@@ -89,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686640632755</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="average algorithm for normalization added">
+      <created>1686650634363</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1686650634363</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -108,6 +127,8 @@
     <MESSAGE value="pulse waveform added" />
     <MESSAGE value="pulse waveform edited" />
     <MESSAGE value="pulse waveform ui complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="pulse waveform ui complete" />
+    <MESSAGE value="average algorithm for normalization added" />
+    <MESSAGE value="median algorithm for scaling added" />
+    <option name="LAST_COMMIT_MESSAGE" value="median algorithm for scaling added" />
   </component>
 </project>
