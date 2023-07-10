@@ -25,7 +25,6 @@ import 'package:wav/wav.dart';
   Decoder({required this.path});
 
 
-  @override
   Future<List<double>> extract() async {
     String wavPath = path.replaceRange(path.length - 3, path.length, "wav");
     bool fileExist = await File(wavPath).exists();

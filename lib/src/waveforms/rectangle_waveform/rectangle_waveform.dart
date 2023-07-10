@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:general_audio_waveforms/src/core/audio_waveform.dart';
 import 'package:general_audio_waveforms/src/waveforms/rectangle_waveform/active_waveform_painter.dart';
@@ -82,7 +84,7 @@ class RectangleWaveform extends AudioWaveform {
 class _RectangleWaveformState extends AudioWaveformState<RectangleWaveform> {
   @override
   Widget build(BuildContext context) {
-    if (widget.samples.isEmpty) {
+    if (widget.samples!.isEmpty) {
       return const SizedBox.shrink();
     }
     final processedSamples = this.processedSamples;

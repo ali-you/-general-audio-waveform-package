@@ -19,3 +19,7 @@ abstract class ScalingAlgorithm {
 
   List<double> execute();
 }
+
+enum ScalingType{
+  average,median,none
+}

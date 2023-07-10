@@ -4,14 +4,22 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfb99b1c-5055-4169-88d4-5cc3da552525" name="Changes" comment="readme and changelog added">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/general-audio-waveform-package.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/general-audio-waveform-package.iml" afterDir="false" />
+    <list default="true" id="cfb99b1c-5055-4169-88d4-5cc3da552525" name="Changes" comment="merged decoders">
+      <change afterPath="$PROJECT_DIR$/lib/src/general_audio_waveform.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/waveforms/waveform_type.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/general_audio_waveforms.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/general_audio_waveforms.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/audio_waveform.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/core/audio_waveform.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/core/audio_waveform.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/data/decoder/decoder.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data/decoder/decoder.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/data/decoder/mp3_decoder.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/data/scaling/scaling_algorithm.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data/scaling/scaling_algorithm.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/waveforms/curved_polygon_waveform/curved_polygon_waveform.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/waveforms/curved_polygon_waveform/curved_polygon_waveform.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/waveforms/polygon_waveform/polygon_waveform.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/waveforms/polygon_waveform/polygon_waveform.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/waveforms/pulse_waveform/pulse_waveform.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/waveforms/pulse_waveform/pulse_waveform.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/waveforms/rectangle_waveform/rectangle_waveform.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/waveforms/rectangle_waveform/rectangle_waveform.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/waveforms/squiggly_waveform/squiggly_waveform.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/waveforms/squiggly_waveform/squiggly_waveform.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686808331532</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="merged decoders">
+      <created>1688971306951</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1688971306952</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -139,6 +154,7 @@
     <MESSAGE value="average algorithm for normalization added" />
     <MESSAGE value="median algorithm for scaling added" />
     <MESSAGE value="scaling algorithm bug fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="scaling algorithm bug fixed" />
+    <MESSAGE value="merged decoders" />
+    <option name="LAST_COMMIT_MESSAGE" value="merged decoders" />
   </component>
 </project>
