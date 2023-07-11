@@ -1,23 +1,26 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:general_audio_waveforms/src/data/common/scaling_algorithm_type.dart';
+import 'package:general_audio_waveforms/src/data/decoder/decoder.dart';
+import 'package:general_audio_waveforms/src/data/scaling/average_algorithm.dart';
 import 'package:general_audio_waveforms/src/data/scaling/median_algorithm.dart';
 import 'package:general_audio_waveforms/src/data/scaling/scaling_algorithm.dart';
 import 'package:general_audio_waveforms/src/util/waveform_alignment.dart';
+import 'package:general_audio_waveforms/src/waveforms/common/waveform_style.dart';
 import 'package:general_audio_waveforms/src/waveforms/curved_polygon_waveform/curved_polygon_waveform.dart';
 import 'package:general_audio_waveforms/src/waveforms/polygon_waveform/polygon_waveform.dart';
 import 'package:general_audio_waveforms/src/waveforms/pulse_waveform/pulse_waveform.dart';
 import 'package:general_audio_waveforms/src/waveforms/rectangle_waveform/rectangle_waveform.dart';
-import 'package:general_audio_waveforms/src/waveforms/waveform_type.dart';
-import 'data/decoder/decoder.dart';
-import 'data/scaling/average_algorithm.dart';
+import 'package:general_audio_waveforms/src/waveforms/common/waveform_type.dart';
 
 // ignore: must_be_immutable
 class GeneralAudioWaveform extends StatefulWidget {
-  ScalingType algorithm;
+  final ScalingAlgorithmType scalingAlgorithm;
+  final WaveformType waveformType;
+  final WaveformStyle? waveformStyle;
   String path;
   int maxSamples;
-  WaveformType waveType;
 
   final Color activeColor;
   final Color inactiveColor;
@@ -39,8 +42,9 @@ class GeneralAudioWaveform extends StatefulWidget {
 
   GeneralAudioWaveform(
       {super.key,
-      this.algorithm = ScalingType.average,
-      this.waveType = WaveformType.pulse,
+      this.scalingAlgorithm = ScalingAlgorithmType.average,
+      this.waveformType = WaveformType.pulse,
+        this.waveformStyle,
       required this.path,
       this.maxSamples = 100,
       this.activeColor = Colors.blueAccent,
@@ -105,13 +109,13 @@ class _GeneralAudioWaveformState extends State<GeneralAudioWaveform> {
 
   Future<void> setSamples() async {
     var tempSamples = await Decoder(path: widget.path).extract();
-    switch (widget.algorithm) {
-      case ScalingType.average:
+    switch (widget.scalingAlgorithm) {
+      case ScalingAlgorithmType.average:
         samples =
             AverageAlgorithm(samples: tempSamples, maxSample: widget.maxSamples)
                 .execute();
         break;
-      case ScalingType.median:
+      case ScalingAlgorithmType.median:
         samples =
             MedianAlgorithm(samples: tempSamples, maxSample: widget.maxSamples)
                 .execute();
@@ -122,7 +126,7 @@ class _GeneralAudioWaveformState extends State<GeneralAudioWaveform> {
   }
 
   Widget waveWidget() {
-    switch (widget.waveType) {
+    switch (widget.waveformType) {
       case WaveformType.pulse:
         return PulseWaveform(
           height: widget.height,
