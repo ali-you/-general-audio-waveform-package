@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfb99b1c-5055-4169-88d4-5cc3da552525" name="Changes" comment="waveform.dart added, waveform_style.dart added">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/.filecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/app.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/kernel_snapshot.d" beforeDir="false" afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/kernel_snapshot.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/kernel_snapshot.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/outputs.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/outputs.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/general_audio_waveform.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/general_audio_waveform.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
