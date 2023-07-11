@@ -51,10 +51,13 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     Timer.periodic(const Duration(seconds: 1), (timer) {
-      if (elapsedTime.inSeconds <= maxDuration.inSeconds) {
+      if (elapsedTime.inSeconds < maxDuration.inSeconds) {
         setState(() {
           elapsedTime += const Duration(seconds: 1);
         });
+      }
+      else{
+        timer.cancel();
       }
     });
     super.initState();
