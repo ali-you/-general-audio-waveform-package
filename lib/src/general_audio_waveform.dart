@@ -9,13 +9,13 @@ import 'package:general_audio_waveforms/src/waveforms/polygon_waveform/polygon_w
 import 'package:general_audio_waveforms/src/waveforms/pulse_waveform/pulse_waveform.dart';
 import 'package:general_audio_waveforms/src/waveforms/rectangle_waveform/rectangle_waveform.dart';
 import 'package:general_audio_waveforms/src/waveforms/waveform_type.dart';
-import 'data/decoder/decoder.dart';
 import 'data/scaling/average_algorithm.dart';
+import 'data/source/wave_source.dart';
 
 // ignore: must_be_immutable
 class GeneralAudioWaveform extends StatefulWidget {
   ScalingType algorithm;
-  String path;
+  WaveSource source;
   int maxSamples;
   WaveformType waveType;
 
@@ -41,7 +41,7 @@ class GeneralAudioWaveform extends StatefulWidget {
       {super.key,
       this.algorithm = ScalingType.average,
       this.waveType = WaveformType.pulse,
-      required this.path,
+      required this.source,
       this.maxSamples = 100,
       this.activeColor = Colors.blueAccent,
       this.inactiveColor = Colors.black38,
@@ -104,7 +104,7 @@ class _GeneralAudioWaveformState extends State<GeneralAudioWaveform> {
   }
 
   Future<void> setSamples() async {
-    var tempSamples = await Decoder(path: widget.path).extract();
+    List<double> tempSamples = await widget.source.samples; // important (while merge)
     switch (widget.algorithm) {
       case ScalingType.average:
         samples =
