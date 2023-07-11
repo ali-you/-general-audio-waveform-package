@@ -80,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
               elapsedTime = d;
             });
           },
-          path: path,
+          source: AudioFileSource(path: path),
           maxSamples: 50,
         ),
       ),
