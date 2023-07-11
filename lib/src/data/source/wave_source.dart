@@ -14,21 +14,22 @@ abstract class WaveSource {
 }
 
 class AudioAssetSource extends WaveSource {
-  final String assetName;
+  final String assetPath;
 
-  AudioAssetSource({required this.assetName});
+  AudioAssetSource({required this.assetPath});
 
   @override
   Future<List<double>> get samples async {
     // Load the asset data as bytes
-    ByteData assetData = await rootBundle.load(assetName);
+    ByteData assetData = await rootBundle.load(assetPath);
+
+
 
     // Convert the bytes to a list of doubles
     List<double> samples = [];
     for (int i = 0; i < assetData.lengthInBytes; i += 2) {
       int sampleValue = assetData.getInt16(i, Endian.little);
-      double sample = sampleValue / 32768.0; // Normalize to range [-1, 1]
-      samples.add(sample);
+      samples.add(sampleValue.toDouble() );
     }
 
     _samples = samples;

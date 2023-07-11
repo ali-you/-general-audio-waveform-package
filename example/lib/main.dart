@@ -40,11 +40,12 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   Duration elapsedTime = const Duration(seconds:0);
+  Duration elapsedTime2 = const Duration(seconds:0);
   Duration maxDuration = const Duration(seconds: 150);
   List<double> samples = [];
 
-  // String path = "/storage/emulated/0/Download/file_example_MP3_700KB.mp3";
-  String path = "/storage/emulated/0/Download/file_example_MP3_1MG.mp3";
+  // String path = "/storage/emulated/0/Download/sample2.mp3";
+  String path = "/storage/emulated/0/Download/sample.mp3";
   // String path = "/sdcard/Download/sample.mp3";
 
   @override
@@ -53,6 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
       if (elapsedTime.inSeconds < maxDuration.inSeconds) {
         setState(() {
           elapsedTime += const Duration(seconds: 1);
+          elapsedTime2 += const Duration(seconds: 1);
         });
       }
       else{
@@ -65,8 +67,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Future<void> requestPermissions() async {
     await [
       Permission.storage,
-      Permission.manageExternalStorage,
-      Permission.mediaLibrary,
+      // Permission.manageExternalStorage,
+      // Permission.mediaLibrary,
     ].request();
   }
 
@@ -78,6 +80,8 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
 
           children: [
+            Spacer(),
+
             GeneralAudioWaveform(
               activeColor: Colors.red,
               algorithm: ScalingType.average,
@@ -90,22 +94,24 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               source: AudioFileSource(path: path),
               height: 100,
-              width: MediaQuery.of(context).size.width * 0.5 ,maxSamples: 50,
+              width: MediaQuery.of(context).size.width * 0.5 ,maxSamples: 80,
             ),
+            Spacer(),
             GeneralAudioWaveform(
-              activeColor: Colors.red,
+              activeColor: Colors.blue,
               algorithm: ScalingType.average,
               maxDuration: maxDuration,
-              elapsedDuration: elapsedTime,
+              elapsedDuration: elapsedTime2,
               elapsedIsChanged: (d){
                 setState(() {
-                  elapsedTime = d;
+                  elapsedTime2 = d;
                 });
               },
-              source: AudioAssetSource(assetName: "/assets/sample.mp3"),
+              source: AudioAssetSource(assetPath: "assets/sample.mp3"),
               height: 100,
-              width: MediaQuery.of(context).size.width * 0.5 ,maxSamples: 50,
+              width: MediaQuery.of(context).size.width * 0.5 ,maxSamples: 80,
             ),
+            Spacer(),
           ],
         ),
       ),
