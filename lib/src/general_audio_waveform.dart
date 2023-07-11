@@ -2,9 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:general_audio_waveforms/src/data/common/scaling_algorithm_type.dart';
-import 'package:general_audio_waveforms/src/data/decoder/decoder.dart';
 import 'package:general_audio_waveforms/src/data/scaling/average_algorithm.dart';
 import 'package:general_audio_waveforms/src/data/scaling/median_algorithm.dart';
+import 'package:general_audio_waveforms/src/data/source/wave_source.dart';
 import 'package:general_audio_waveforms/src/waveforms/common/waveform.dart';
 import 'package:general_audio_waveforms/src/waveforms/common/waveform_style.dart';
 import 'package:general_audio_waveforms/src/waveforms/common/waveform_type.dart';
@@ -17,7 +17,7 @@ class GeneralAudioWaveform extends StatefulWidget {
   final Duration maxDuration;
   final Duration elapsedDuration;
   Function(Duration) elapsedIsChanged;
-  String path;
+  final WaveSource source;
   int maxSamples;
 
   GeneralAudioWaveform(
@@ -28,7 +28,7 @@ class GeneralAudioWaveform extends StatefulWidget {
         required this.maxDuration,
         required this.elapsedDuration,
         required this.elapsedIsChanged,
-      required this.path,
+      required this.source,
       this.maxSamples = 100});
 
   @override
@@ -74,7 +74,7 @@ class _GeneralAudioWaveformState extends State<GeneralAudioWaveform> {
   }
 
   Future<void> setSamples() async {
-    var tempSamples = await Decoder(path: widget.path).extract();
+    var tempSamples = await widget.source.samples;
     switch (widget.scalingAlgorithm) {
       case ScalingAlgorithmType.average:
         samples =
