@@ -108,9 +108,9 @@ class _PulseWaveformState extends AudioWaveformState<PulseWaveform> {
           CustomPaint(
             size: Size(widget.width, widget.height),
             isComplex: true,
-            painter: PulseActiveWaveformPainter(
+            painter: PulseInActiveWaveformPainter(
               color: widget.activeColor,
-              activeSamples: activeSamples,
+              samples: activeSamples,
               gradient: widget.activeGradient,
               waveformAlignment: waveformAlignment,
               borderColor: widget.activeBorderColor,
