@@ -39,7 +39,7 @@ class GeneralAudioWaveform extends StatefulWidget {
 
   GeneralAudioWaveform(
       {super.key,
-      this.algorithm = ScalingType.none,
+      this.algorithm = ScalingType.average,
       this.waveType = WaveformType.pulse,
       required this.path,
       this.maxSamples = 100,
@@ -58,7 +58,7 @@ class GeneralAudioWaveform extends StatefulWidget {
       required this.elapsedIsChanged,
       this.absolute = false,
       this.invert = false,
-      this.showActiveWaveform = false,
+      this.showActiveWaveform = true,
       this.waveformAlignment = WaveformAlignment.center});
 
   @override
@@ -71,15 +71,6 @@ class _GeneralAudioWaveformState extends State<GeneralAudioWaveform> {
   @override
   void initState() {
     setSamples();
-
-    // Timer.periodic(const Duration(seconds: 1), (timer) {
-    //   if (widget.elapsedDuration!.inMilliseconds < widget.maxDuration!.inMilliseconds) {
-    //     setState(() {
-    //       widget.elapsedDuration = widget.elapsedDuration! + const Duration(milliseconds: 500);
-    //     });
-    //   }
-    // });
-
     super.initState();
   }
 
@@ -95,7 +86,7 @@ class _GeneralAudioWaveformState extends State<GeneralAudioWaveform> {
             data: ThemeData(
                 sliderTheme: SliderThemeData(
                     thumbShape: SliderComponentShape.noOverlay,
-                    activeTrackColor: Colors.red.withOpacity(0.5),
+                    activeTrackColor: Colors.transparent,
                     inactiveTrackColor: Colors.transparent,
                     overlayShape: SliderComponentShape.noThumb)),
             child: Slider(
@@ -103,10 +94,8 @@ class _GeneralAudioWaveformState extends State<GeneralAudioWaveform> {
                 max: ((widget.maxDuration).inMilliseconds).toDouble(),
                 divisions: (widget.maxDuration).inMilliseconds,
                 onChanged: (double value) {
-                  setState(() {
                     widget.elapsedIsChanged(
                         Duration(milliseconds: value.toInt()));
-                  });
                 }),
           ),
         ],
@@ -145,8 +134,7 @@ class _GeneralAudioWaveformState extends State<GeneralAudioWaveform> {
           inactiveBorderColor: widget.inactiveBorderColor,
           borderWidth: widget.borderWidth,
           isRoundedRectangle: widget.isRoundedRectangle,
-          // elapsedDuration: widget.elapsedDuration,
-          elapsedDuration: Duration(milliseconds: 500),
+          elapsedDuration: widget.elapsedDuration,
           maxDuration: widget.maxDuration,
           absolute: widget.absolute,
           activeGradient: widget.activeGradient,

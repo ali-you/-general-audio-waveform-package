@@ -40,7 +40,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Duration elapsedTime = const Duration(seconds:7);
+  Duration elapsedTime = const Duration(seconds:0);
   Duration maxDuration = const Duration(milliseconds: 100000);
   List<double> samples = [];
 
@@ -51,9 +51,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     Timer.periodic(const Duration(seconds: 1), (timer) {
-      if (elapsedTime.inMilliseconds < maxDuration.inMilliseconds) {
+      if (elapsedTime.inSeconds <= maxDuration.inSeconds) {
         setState(() {
-          elapsedTime += const Duration(milliseconds: 500);
+          elapsedTime += const Duration(seconds: 1);
         });
       }
     });
@@ -74,29 +74,30 @@ class _MyHomePageState extends State<MyHomePage> {
         .execute();
     return Scaffold(
       body: Center(
-        child:  PulseWaveform(
-            height: 50,
-            width: MediaQuery.of(context).size.width,
-            maxDuration: maxDuration,
-            elapsedDuration: elapsedTime,
-            activeColor: Colors.redAccent,
-            borderWidth: 2,
-            inactiveColor: Colors.black,
-            showActiveWaveform: true,
-            samples: avgSamples),
-        // child: GeneralAudioWaveform(
-        //   algorithm: ScalingType.average,
-        //   maxDuration: maxDuration,
-        //   elapsedDuration: Duration(milliseconds: 3000),
-        //   elapsedIsChanged: (d){
-        //     setState(() {
-        //       elapsedTime = d;
-        //     });
-        //   },
-        //   path: path,
-        //   height: 100,
-        //   width: MediaQuery.of(context).size.width * 0.5 ,maxSamples: 50,
-        // ),
+        // child:  PulseWaveform(
+        //     height: 50,
+        //     width: MediaQuery.of(context).size.width,
+        //     maxDuration: maxDuration,
+        //     elapsedDuration: elapsedTime,
+        //     activeColor: Colors.redAccent,
+        //     borderWidth: 2,
+        //     inactiveColor: Colors.black,
+        //     showActiveWaveform: true,
+        //     samples: avgSamples),
+        child: GeneralAudioWaveform(
+          activeColor: Colors.red,
+          algorithm: ScalingType.average,
+          maxDuration: maxDuration,
+          elapsedDuration: elapsedTime,
+          elapsedIsChanged: (d){
+            setState(() {
+              elapsedTime = d;
+            });
+          },
+          path: path,
+          height: 100,
+          width: MediaQuery.of(context).size.width * 0.5 ,maxSamples: 50,
+        ),
         // child: Column(
         //   mainAxisAlignment: MainAxisAlignment.spaceAround,
         //   children: [

@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfb99b1c-5055-4169-88d4-5cc3da552525" name="Changes" comment="general audio waveform">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/general_audio_waveform.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/general_audio_waveform.dart" afterDir="false" />
-    </list>
+    <list default="true" id="cfb99b1c-5055-4169-88d4-5cc3da552525" name="Changes" comment="slider bug fixed" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688998938975</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="slider bug fixed">
+      <created>1689063614866</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1689063614867</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -151,6 +154,7 @@
     <MESSAGE value="scaling algorithm bug fixed" />
     <MESSAGE value="merged decoders" />
     <MESSAGE value="general audio waveform" />
-    <option name="LAST_COMMIT_MESSAGE" value="general audio waveform" />
+    <MESSAGE value="slider bug fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="slider bug fixed" />
   </component>
 </project>
