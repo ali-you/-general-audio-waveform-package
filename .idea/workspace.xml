@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfb99b1c-5055-4169-88d4-5cc3da552525" name="Changes" comment="waveform.dart added, waveform_style.dart added">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/.filecache" beforeDir="false" afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/.filecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/app.dill" beforeDir="false" afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/app.dill" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/kernel_snapshot.d" beforeDir="false" afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/kernel_snapshot.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/kernel_snapshot.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/outputs.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/outputs.json" afterDir="false" />
+    <list default="true" id="cfb99b1c-5055-4169-88d4-5cc3da552525" name="Changes" comment="&#10;merging branches">
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/version" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/example/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/example/.dart_tool/version" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/general_audio_waveform.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/general_audio_waveform.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -167,7 +169,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689079454036</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="&#10;merging branches">
+      <created>1689082198481</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1689082198481</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -195,6 +204,7 @@
     <MESSAGE value="slider bug fixed" />
     <MESSAGE value="waveform_style.dart added, directory structure changed" />
     <MESSAGE value="waveform.dart added, waveform_style.dart added" />
-    <option name="LAST_COMMIT_MESSAGE" value="waveform.dart added, waveform_style.dart added" />
+    <MESSAGE value="&#10;merging branches" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;merging branches" />
   </component>
 </project>

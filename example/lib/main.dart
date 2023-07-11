@@ -38,10 +38,9 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   Duration elapsedTime = const Duration(seconds:0);
   Duration maxDuration = const Duration(milliseconds: 100000);
-  List<double> samples = [];
 
-  // String path = "/storage/emulated/0/Download/file_example_MP3_700KB.mp3";
-  String path = "/storage/emulated/0/Download/file_example_MP3_1MG.mp3";
+  String path = "/storage/emulated/0/Download/file_example_MP3_700KB.mp3";
+  // String path = "/storage/emulated/0/Download/file_example_MP3_1MG.mp3";
   // String path = "/sdcard/Download/sample.mp3";
 
   @override
