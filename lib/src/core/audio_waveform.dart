@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
@@ -28,7 +30,7 @@ abstract class AudioWaveform extends StatefulWidget {
   /// Constructor for [AudioWaveform]
   AudioWaveform({
     Key? key,
-    required this.samples,
+    this.samples,
     required this.height,
     required this.width,
     this.maxDuration,
@@ -66,7 +68,7 @@ abstract class AudioWaveform extends StatefulWidget {
 
   /// Audio samples raw input.
   /// This raw samples are processed before being used to paint the waveform.
-  final List<double> samples;
+  final List<double>? samples;
 
   /// Height of the canvas on which the waveform will be drawn.
   final double height;
@@ -167,7 +169,7 @@ abstract class AudioWaveformState<T extends AudioWaveform> extends State<T> {
     final rawSamples = widget.samples;
 
     _processedSamples = rawSamples
-        .map((e) => absolute ? e.abs() * widget.height : e * widget.height)
+        !.map((e) => absolute ? e.abs() * widget.height : e * widget.height)
         .toList();
 
     final maxNum =
@@ -205,7 +207,7 @@ abstract class AudioWaveformState<T extends AudioWaveform> extends State<T> {
       final elapsedTimeRatio =
           elapsedDuration!.inMilliseconds / maxDuration!.inMilliseconds;
 
-      _activeIndex = (widget.samples.length * elapsedTimeRatio).round();
+      _activeIndex = (widget.samples!.length * elapsedTimeRatio).round();
     }
   }
 
@@ -235,7 +237,7 @@ abstract class AudioWaveformState<T extends AudioWaveform> extends State<T> {
   void initState() {
     super.initState();
 
-    _processedSamples = widget.samples;
+    _processedSamples = widget.samples!;
     _activeIndex = 0;
     _activeSamples = [];
     _sampleWidth = 0;
@@ -250,8 +252,8 @@ abstract class AudioWaveformState<T extends AudioWaveform> extends State<T> {
   void didUpdateWidget(covariant T oldWidget) {
     super.didUpdateWidget(oldWidget);
 
-    if (!checkForSamplesEquality(widget.samples, oldWidget.samples) &&
-        widget.samples.isNotEmpty) {
+    if (!checkForSamplesEquality(widget.samples!, oldWidget.samples!) &&
+        widget.samples!.isNotEmpty) {
       processSamples();
       _calculateSampleWidth();
       _updateActiveIndex();

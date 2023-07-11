@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
@@ -57,7 +59,7 @@ class _SquigglyWaveformState extends AudioWaveformState<SquigglyWaveform> {
     final rawSamples = widget.samples;
     // ignore: omit_local_variable_types
     List<double> processedSamples =
-        rawSamples.map((e) => e.abs() * widget.height).toList();
+        rawSamples!.map((e) => e.abs() * widget.height).toList();
 
     final maxNum =
         processedSamples.reduce((a, b) => math.max(a.abs(), b.abs()));
@@ -78,7 +80,7 @@ class _SquigglyWaveformState extends AudioWaveformState<SquigglyWaveform> {
 
   @override
   Widget build(BuildContext context) {
-    if (widget.samples.isEmpty) {
+    if (widget.samples!.isEmpty) {
       return const SizedBox.shrink();
     }
     final processedSamples = this.processedSamples;

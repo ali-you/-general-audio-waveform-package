@@ -29,9 +29,9 @@ class PulseInActiveWaveformPainter extends InActiveWaveformPainter {
     final borderPaint = Paint()
       ..style = PaintingStyle.stroke
       ..color = borderColor
-      ..strokeWidth = borderWidth;
+      ..strokeWidth = borderWidth > sampleWidth ? 0 : borderWidth;
     final alignPosition = size.height;
-
+    
     if (isRoundedRectangle) {
       drawRoundedRectangles(
         canvas,

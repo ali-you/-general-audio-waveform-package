@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   general_audio_waveforms:
     path: ..
+  permission_handler: ^10.3.0
 
 dev_dependencies:
   flutter_test:

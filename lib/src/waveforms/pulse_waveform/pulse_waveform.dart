@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:general_audio_waveforms/src/core/audio_waveform.dart';
 import 'package:general_audio_waveforms/src/waveforms/pulse_waveform/active_waveform_painter.dart';
@@ -21,7 +23,6 @@ import 'package:general_audio_waveforms/src/waveforms/pulse_waveform/inactive_wa
 class PulseWaveform extends AudioWaveform {
   PulseWaveform({
     super.key,
-    required super.samples,
     required super.height,
     required super.width,
     super.maxDuration,
@@ -37,7 +38,7 @@ class PulseWaveform extends AudioWaveform {
     /// by default it is absolute. if you want to make each pulse paint in the half of its current height make it false
     super.absolute = true,
     super.invert = false,
-    this.isRoundedRectangle = false
+    this.isRoundedRectangle = false, required super.samples
   }) : assert(
           borderWidth >= 0 && borderWidth <= 3.0,
           'BorderWidth must be between 0 and 3',
@@ -76,7 +77,7 @@ class PulseWaveform extends AudioWaveform {
 class _PulseWaveformState extends AudioWaveformState<PulseWaveform> {
   @override
   Widget build(BuildContext context) {
-    if (widget.samples.isEmpty) {
+    if (widget.samples!.isEmpty) {
       return const SizedBox.shrink();
     }
     final processedSamples = this.processedSamples;

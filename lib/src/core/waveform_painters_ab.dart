@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:general_audio_waveforms/src/const/colors.dart';
 import 'package:general_audio_waveforms/src/util/check_samples_equality.dart';
 import 'package:general_audio_waveforms/src/util/waveform_alignment.dart';
 
@@ -57,7 +56,7 @@ abstract class ActiveWaveformPainter extends WaveformPainter {
     required WaveformAlignment waveformAlignment,
     PaintingStyle style = PaintingStyle.stroke,
     this.borderWidth = 0.0,
-    this.borderColor = opaqueBlack,
+    this.borderColor = Colors.black26,
   }) : super(
           samples: [], //samples,
           color: color,
@@ -108,7 +107,7 @@ abstract class InActiveWaveformPainter extends WaveformPainter {
     required double sampleWidth,
     PaintingStyle style = PaintingStyle.stroke,
     this.borderWidth = 0.0,
-    this.borderColor = opaqueBlack,
+    this.borderColor =  Colors.black26,
   }) : super(
           samples: samples,
           color: color,

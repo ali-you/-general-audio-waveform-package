@@ -1,7 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:general_audio_waveforms/src/general_audio_waveform.dart';
 import 'package:general_audio_waveforms/src/waveforms/pulse_waveform/pulse_waveform.dart';
+import 'package:general_audio_waveforms/src/data/scaling/average_algorithm.dart';
+import 'package:general_audio_waveforms/src/data/decoder/decoder.dart';
+import 'package:general_audio_waveforms/src/data/scaling/scaling_algorithm.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,81 +40,131 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Duration elspadeTime = const Duration(seconds: 0);
+  Duration elapsedTime = const Duration(seconds:0);
+  Duration maxDuration = const Duration(milliseconds: 100000);
+  List<double> samples = [];
+
+  // String path = "/storage/emulated/0/Download/file_example_MP3_700KB.mp3";
+  String path = "/storage/emulated/0/Download/file_example_MP3_1MG.mp3";
+  // String path = "/sdcard/Download/sample.mp3";
 
   @override
   void initState() {
-    // TODO: implement initState
     Timer.periodic(const Duration(seconds: 1), (timer) {
-      setState(() {
-        // elspadeTime += const Duration(seconds: 1);
-      });
+      if (elapsedTime.inSeconds < maxDuration.inSeconds) {
+        setState(() {
+          elapsedTime += const Duration(seconds: 1);
+        });
+      }
+      else{
+        timer.cancel();
+      }
     });
     super.initState();
   }
 
+  Future<void> requestPermissions() async {
+    await [
+      Permission.storage,
+      Permission.manageExternalStorage,
+      Permission.mediaLibrary,
+    ].request();
+  }
+
   @override
   Widget build(BuildContext context) {
+    var avgSamples = AverageAlgorithm(samples: samples, maxSample: 150)
+        .execute();
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
       body: Center(
-        child: PulseWaveform(
-          height: 50,
-          width: MediaQuery.of(context).size.width * 0.43 ,
-          maxDuration: const Duration(seconds: 100),
-          elapsedDuration: elspadeTime,
-          activeColor: Colors.redAccent,
-          borderWidth: 3,
-          inactiveColor: Colors.black,
-          samples: const [-0.062317353988907675,
-
-            -0.4598192859194377,
-            -0.17790674342532247,
-            -0.2737327368615886,
-            -0.8037565711962959,
-            -0.3403352437735105,
-            -0.3403352437735105,
-            -0.27446501118809963,
-            -0.4301010490359812,
-            -0.9557947637174682,
-            -0.7229677525107734,
-            -0.7902207265972939,
-            -0.31003540156953254,
-            -0.47350054498637754,
-            -0.47350054498637754,
-            -0.3664684001886169,
-            -0.27446501118809963,
-            -0.4301010490359812,
-            -0.9557947637174682,
-            -0.7229677525107734,
-            -0.7902207265972939,
-            -0.31003540156953254,
-            -0.47350054498637754,
-            -0.47350054498637754,
-            -0.3664684001886169,
-            -0.1646064842178242,
-            -0.5152226261639911,
-            -0.0877756528089301,
-            -0.31003540156953254,
-            -0.47350054498637754,
-            -0.3664684001886169,
-            -0.1646064842178242,
-            -0.5152226261639911,
-            -0.0877756528089301,
-            -0.4180132621450826,
-            -0.7140882743237471,
-            -0.4598192859194377,
-            -0.17790674342532247,
-            -0.2737327368615886,
-            -0.8037565711962959,
-            -0.3403352437735105,
-            -0.27446501118809963,
-          ]
+        // child:  PulseWaveform(
+        //     height: 50,
+        //     width: MediaQuery.of(context).size.width,
+        //     maxDuration: maxDuration,
+        //     elapsedDuration: elapsedTime,
+        //     activeColor: Colors.redAccent,
+        //     borderWidth: 2,
+        //     inactiveColor: Colors.black,
+        //     showActiveWaveform: true,
+        //     samples: avgSamples),
+        child: GeneralAudioWaveform(
+          activeColor: Colors.red,
+          algorithm: ScalingType.average,
+          maxDuration: maxDuration,
+          elapsedDuration: elapsedTime,
+          elapsedIsChanged: (d){
+            setState(() {
+              elapsedTime = d;
+            });
+          },
+          path: path,
+          height: 100,
+          width: MediaQuery.of(context).size.width * 0.5 ,maxSamples: 50,
         ),
+        // child: Column(
+        //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+        //   children: [
+            // Flexible(
+            //     child: IconButton(
+            //         onPressed: _onAddPressed,
+            //         icon: const Icon(Icons.add))),
+            // Flexible(
+            //     child: IconButton(
+            //         onPressed: _onReplayPressed,
+            //         icon: const Icon(Icons.replay))),
+            // Stack(
+            //   children: [
+            //     PulseWaveform(
+            //         height: 50,
+            //         width: MediaQuery.of(context).size.width,
+            //         maxDuration: maxDuration,
+            //         elapsedDuration: elapsedTime,
+            //         activeColor: Colors.redAccent,
+            //         borderWidth: 2,
+            //         inactiveColor: Colors.black,
+            //         showActiveWaveform: true,
+            //         samples: avgSamples),
+            //     Theme(
+            //       data: ThemeData(
+            //           sliderTheme: SliderThemeData(
+            //               thumbShape: SliderComponentShape.noOverlay,
+            //               activeTrackColor: Colors.transparent,
+            //               inactiveTrackColor: Colors.transparent),
+            //           splashFactory: NoSplash.splashFactory,
+            //           hoverColor: Colors.transparent,
+            //           focusColor: Colors.transparent,
+            //           splashColor: Colors.transparent,
+            //           highlightColor: Colors.transparent),
+            //       child: Slider(
+            //         value: (elapsedTime.inMilliseconds).toDouble(),
+            //         max: (maxDuration.inMilliseconds).toDouble(),
+            //         divisions: maxDuration.inMilliseconds,
+            //         onChanged: (double value) {
+            //           setState(() {
+            //             elapsedTime = Duration(milliseconds: value.round());
+            //           });
+            //         },
+            //       ),
+            //     ),
+            //   ],
+            // ),
+          // ],
+        // ),
       ),
     );
+  }
+
+  void _onReplayPressed() {
+
+    setState(() {
+      elapsedTime = Duration.zero;
+    });
+  }
+
+  void _onAddPressed() {
+    requestPermissions();
+    setState(() async {
+      samples =  await Decoder(path: path).extract();
+    });
   }
 }
