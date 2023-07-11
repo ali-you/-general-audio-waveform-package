@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:ffmpeg_kit_flutter/ffmpeg_kit.dart';
+import 'package:ffmpeg_kit_flutter/ffmpeg_kit_config.dart';
 import 'package:ffmpeg_kit_flutter/ffmpeg_session.dart';
 import 'package:ffmpeg_kit_flutter/return_code.dart';
 import 'package:flutter/services.dart';
@@ -22,17 +23,39 @@ class AudioAssetSource extends WaveSource {
   Future<List<double>> get samples async {
     // Load the asset data as bytes
     ByteData assetData = await rootBundle.load(assetPath);
+    var numChannels = 1;
 
+    // Write the PCM data to a temporary file
+    String pcmPath = '/input.pcm';
+    File pcmFile = File(pcmPath);
+    await pcmFile.writeAsBytes(assetData.buffer.asUint8List());
 
+    // Use FFmpeg to convert the PCM file to a WAV file
+    String wavPath = '/output.wav';
+    FFmpegKitConfig.enableLogCallback(null); // Disable logging
+    FFmpegKitConfig.enableStatisticsCallback(null); // Disable statistics
+    FFmpegSession session = await FFmpegKit.executeAsync(
+        '-f s16le -ar 44100 -ac $numChannels -i $pcmPath $wavPath',
+        null);
+    bool fileExist = await File(wavPath).exists();
+    bool canGetWave = fileExist;
 
-    // Convert the bytes to a list of doubles
-    List<double> samples = [];
-    for (int i = 0; i < assetData.lengthInBytes; i += 2) {
-      int sampleValue = assetData.getInt16(i, Endian.little);
-      samples.add(sampleValue.toDouble() );
+    if (!fileExist) {
+      FFmpegSession session = await FFmpegKit.executeAsync(
+          '-i $pcmPath -vn -acodec pcm_s16le -ar 44100 -ac 2 $wavPath');
+      canGetWave = ReturnCode.isSuccess(await session.getReturnCode());
+      if (!canGetWave) {
+        throw "Error: ${await session.getLogsAsString()}";
+      }
     }
-
-    _samples = samples;
+    ///creating the wave
+    if (canGetWave) {
+      Wav wav = await Wav.readFile(wavPath);
+      _samples =  (wav.channels.toList())
+          .expand((element) => element)
+          .map((e) => e.toDouble())
+          .toList();
+    }
     return _samples;
   }
 }
@@ -64,6 +87,8 @@ class AudioFileSource extends WaveSource {
           .map((e) => e.toDouble())
           .toList();
     }
+    // Delete the temporary file
+    await File(wavPath).delete();
     return _samples;
   }
 }
