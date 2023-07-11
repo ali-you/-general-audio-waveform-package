@@ -237,7 +237,7 @@ abstract class AudioWaveformState<T extends AudioWaveform> extends State<T> {
   void initState() {
     super.initState();
 
-    _processedSamples = widget.samples!;
+    _processedSamples = widget.samples ?? [];
     _activeIndex = 0;
     _activeSamples = [];
     _sampleWidth = 0;
