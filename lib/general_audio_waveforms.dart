@@ -5,3 +5,4 @@ export 'src/data/scaling/average_algorithm.dart';
 export 'src/data/scaling/scaling_algorithm.dart';
 export 'src/data/common/scaling_algorithm_type.dart';
 export 'src/waveforms/common/waveform_type.dart';
+export 'src/waveforms/common/waveform_style.dart';

@@ -72,7 +72,6 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: Center(
         child: GeneralAudioWaveform(
-          activeColor: Colors.red,
           scalingAlgorithm: ScalingAlgorithmType.average,
           maxDuration: maxDuration,
           elapsedDuration: elapsedTime,
@@ -82,8 +81,6 @@ class _MyHomePageState extends State<MyHomePage> {
             });
           },
           path: path,
-          height: 100,
-          width: MediaQuery.of(context).size.width * 0.5 ,
           maxSamples: 50,
         ),
       ),
