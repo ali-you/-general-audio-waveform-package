@@ -1,5 +1,5 @@
 name: general_audio_waveforms
-description: A new Flutter project.
+description: General Audio Waveforms
 version: 0.0.1
 homepage: https://uvstudio.fun/
 repository: https://github.com/ali-you/general-audio-waveform-package
@@ -11,6 +11,9 @@ environment:
   flutter: ">=1.17.0"
 
 dependencies:
+
+  collection: ^1.15.0
+
   flutter:
     sdk: flutter
 

@@ -4,19 +4,53 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfb99b1c-5055-4169-88d4-5cc3da552525" name="Changes" comment="pulse waveform ui complete" />
+    <list default="true" id="cfb99b1c-5055-4169-88d4-5cc3da552525" name="Changes" comment="some changes">
+      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/.filecache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/app.dill" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/debug_android_application.stamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/flutter_assets.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/gen_dart_plugin_registrant.stamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/gen_localizations.stamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/kernel_snapshot.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/kernel_snapshot.stamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/b71f0f945ef60647c5189982a97af717/outputs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/.dart_tool/version" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/version" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/example/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/macos/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/example/macos/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/audio_waveform.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/audio_waveform.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/util/check_samples_equality.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/util/check_samples_equality.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/waveforms/pulse_waveform/pulse_waveform.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/waveforms/pulse_waveform/pulse_waveform.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2R6eaF9guLDbyP0zDwIaJgFV0GR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
