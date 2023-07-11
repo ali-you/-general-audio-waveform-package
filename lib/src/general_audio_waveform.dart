@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:general_audio_waveforms/src/data/scaling/median_algorithm.dart';
 import 'package:general_audio_waveforms/src/data/scaling/scaling_algorithm.dart';
@@ -27,8 +29,9 @@ class GeneralAudioWaveform extends StatefulWidget {
   final bool isRoundedRectangle;
   final double height;
   final double width;
-  final Duration? maxDuration;
-  Duration? elapsedDuration;
+  final Duration maxDuration;
+  final Duration elapsedDuration;
+  Function(Duration) elapsedIsChanged;
   final bool absolute;
   final bool invert;
   final bool showActiveWaveform;
@@ -52,6 +55,7 @@ class GeneralAudioWaveform extends StatefulWidget {
       required this.width,
       required this.maxDuration,
       required this.elapsedDuration,
+      required this.elapsedIsChanged,
       this.absolute = false,
       this.invert = false,
       this.showActiveWaveform = false,
@@ -67,33 +71,46 @@ class _GeneralAudioWaveformState extends State<GeneralAudioWaveform> {
   @override
   void initState() {
     setSamples();
+
+    // Timer.periodic(const Duration(seconds: 1), (timer) {
+    //   if (widget.elapsedDuration!.inMilliseconds < widget.maxDuration!.inMilliseconds) {
+    //     setState(() {
+    //       widget.elapsedDuration = widget.elapsedDuration! + const Duration(milliseconds: 500);
+    //     });
+    //   }
+    // });
+
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        waveWidget(),
-        Theme(
-          data: ThemeData(
-              sliderTheme: SliderThemeData(
-            thumbShape: SliderComponentShape.noOverlay,
-            activeTrackColor: Colors.transparent,
-            inactiveTrackColor: Colors.transparent,
-          )),
-          child: Slider(
-            value: ((widget.elapsedDuration)!.inMilliseconds).toDouble(),
-            max: ((widget.maxDuration)!.inMilliseconds).toDouble(),
-            divisions: (widget.maxDuration)!.inMilliseconds,
-            onChanged: (double value) {
-              setState(() {
-                widget.elapsedDuration = Duration(milliseconds: value.round());
-              });
-            },
+    return SizedBox(
+      width: widget.width,
+      height: widget.height,
+      child: Stack(
+        children: [
+          waveWidget(),
+          Theme(
+            data: ThemeData(
+                sliderTheme: SliderThemeData(
+                    thumbShape: SliderComponentShape.noOverlay,
+                    activeTrackColor: Colors.red.withOpacity(0.5),
+                    inactiveTrackColor: Colors.transparent,
+                    overlayShape: SliderComponentShape.noThumb)),
+            child: Slider(
+                value: ((widget.elapsedDuration).inMilliseconds).toDouble(),
+                max: ((widget.maxDuration).inMilliseconds).toDouble(),
+                divisions: (widget.maxDuration).inMilliseconds,
+                onChanged: (double value) {
+                  setState(() {
+                    widget.elapsedIsChanged(
+                        Duration(milliseconds: value.toInt()));
+                  });
+                }),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
@@ -128,7 +145,8 @@ class _GeneralAudioWaveformState extends State<GeneralAudioWaveform> {
           inactiveBorderColor: widget.inactiveBorderColor,
           borderWidth: widget.borderWidth,
           isRoundedRectangle: widget.isRoundedRectangle,
-          elapsedDuration: widget.elapsedDuration,
+          // elapsedDuration: widget.elapsedDuration,
+          elapsedDuration: Duration(milliseconds: 500),
           maxDuration: widget.maxDuration,
           absolute: widget.absolute,
           activeGradient: widget.activeGradient,

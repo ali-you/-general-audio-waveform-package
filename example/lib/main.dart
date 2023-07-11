@@ -5,6 +5,7 @@ import 'package:general_audio_waveforms/src/general_audio_waveform.dart';
 import 'package:general_audio_waveforms/src/waveforms/pulse_waveform/pulse_waveform.dart';
 import 'package:general_audio_waveforms/src/data/scaling/average_algorithm.dart';
 import 'package:general_audio_waveforms/src/data/decoder/decoder.dart';
+import 'package:general_audio_waveforms/src/data/scaling/scaling_algorithm.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 void main() {
@@ -39,11 +40,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Duration elapsedTime = const Duration(seconds: 0);
+  Duration elapsedTime = const Duration(seconds:7);
   Duration maxDuration = const Duration(milliseconds: 100000);
   List<double> samples = [];
 
+  // String path = "/storage/emulated/0/Download/file_example_MP3_700KB.mp3";
   String path = "/storage/emulated/0/Download/file_example_MP3_1MG.mp3";
+  // String path = "/sdcard/Download/sample.mp3";
 
   @override
   void initState() {
@@ -67,28 +70,44 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    var avgSamples = AverageAlgorithm(samples: samples, maxSample: 100)
+    var avgSamples = AverageAlgorithm(samples: samples, maxSample: 150)
         .execute();
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Flexible(
-                child: IconButton(
-                    onPressed: _onAddPressed,
-                    icon: const Icon(Icons.add))),
-            Flexible(
-                child: IconButton(
-                    onPressed: _onReplayPressed,
-                    icon: const Icon(Icons.replay))),
-            GeneralAudioWaveform(
-              maxDuration: maxDuration,
-              elapsedDuration: elapsedTime,
-              path: path,
-              height: 50,
-              width: MediaQuery.of(context).size.width,
-            )
+        child:  PulseWaveform(
+            height: 50,
+            width: MediaQuery.of(context).size.width,
+            maxDuration: maxDuration,
+            elapsedDuration: elapsedTime,
+            activeColor: Colors.redAccent,
+            borderWidth: 2,
+            inactiveColor: Colors.black,
+            showActiveWaveform: true,
+            samples: avgSamples),
+        // child: GeneralAudioWaveform(
+        //   algorithm: ScalingType.average,
+        //   maxDuration: maxDuration,
+        //   elapsedDuration: Duration(milliseconds: 3000),
+        //   elapsedIsChanged: (d){
+        //     setState(() {
+        //       elapsedTime = d;
+        //     });
+        //   },
+        //   path: path,
+        //   height: 100,
+        //   width: MediaQuery.of(context).size.width * 0.5 ,maxSamples: 50,
+        // ),
+        // child: Column(
+        //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+        //   children: [
+            // Flexible(
+            //     child: IconButton(
+            //         onPressed: _onAddPressed,
+            //         icon: const Icon(Icons.add))),
+            // Flexible(
+            //     child: IconButton(
+            //         onPressed: _onReplayPressed,
+            //         icon: const Icon(Icons.replay))),
             // Stack(
             //   children: [
             //     PulseWaveform(
@@ -125,8 +144,8 @@ class _MyHomePageState extends State<MyHomePage> {
             //     ),
             //   ],
             // ),
-          ],
-        ),
+          // ],
+        // ),
       ),
     );
   }
