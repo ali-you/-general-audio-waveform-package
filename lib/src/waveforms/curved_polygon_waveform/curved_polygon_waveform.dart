@@ -1,5 +1,3 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
 import 'package:general_audio_waveforms/src/core/audio_waveform.dart';
 import 'package:general_audio_waveforms/src/core/waveform_painters_ab.dart';

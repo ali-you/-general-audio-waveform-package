@@ -2,18 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:general_audio_waveforms/general_audio_waveforms.dart';
-import 'package:general_audio_waveforms/src/data/common/scaling_algorithm_type.dart';
 import 'package:general_audio_waveforms/src/data/scaling/average_algorithm.dart';
 import 'package:general_audio_waveforms/src/data/scaling/median_algorithm.dart';
-import 'package:general_audio_waveforms/src/data/source/wave_source.dart';
 import 'package:general_audio_waveforms/src/util/waveform_alignment.dart';
 import 'package:general_audio_waveforms/src/waveforms/common/waveform.dart';
-import 'package:general_audio_waveforms/src/waveforms/common/waveform_style.dart';
-import 'package:general_audio_waveforms/src/waveforms/common/waveform_type.dart';
-import 'package:general_audio_waveforms/src/waveforms/curved_polygon_waveform/curved_polygon_waveform.dart';
-import 'package:general_audio_waveforms/src/waveforms/polygon_waveform/polygon_waveform.dart';
-import 'package:general_audio_waveforms/src/waveforms/pulse_waveform/pulse_waveform.dart';
-import 'package:general_audio_waveforms/src/waveforms/rectangle_waveform/rectangle_waveform.dart';
 
 // ignore: must_be_immutable
 class GeneralAudioWaveform extends StatefulWidget {

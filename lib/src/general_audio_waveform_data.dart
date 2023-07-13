@@ -1,4 +1,5 @@
 import 'package:general_audio_waveforms/general_audio_waveforms.dart';
+import 'package:general_audio_waveforms/src/data/scaling/average_algorithm.dart';
 import 'package:general_audio_waveforms/src/data/scaling/median_algorithm.dart';
 
 class GeneralAudioWaveformData {

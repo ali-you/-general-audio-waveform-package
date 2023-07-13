@@ -1,4 +1,3 @@
-
 enum WaveformType{
   pulse,
   rectangle,
