@@ -10,6 +10,8 @@ class Waveform extends StatelessWidget {
       {Key? key,
       required this.waveformType,
       this.waveformStyle,
+        this.height,
+        this.width,
       required this.elapsedDuration,
       required this.maxDuration,
       this.samples})
@@ -17,19 +19,19 @@ class Waveform extends StatelessWidget {
 
   final WaveformType waveformType;
   final WaveformStyle? waveformStyle;
+  final double? height;
+  final double? width;
   final Duration maxDuration;
   final Duration elapsedDuration;
   final List<double>? samples;
 
   @override
   Widget build(BuildContext context) {
-    print("#########################################################");
-    print(samples);
     switch (waveformType) {
       case WaveformType.pulse:
         return PulseWaveform(
-          height: waveformStyle?.height ?? 100,
-          width: waveformStyle?.width ?? double.maxFinite,
+          height: height ?? 100,
+          width: width ?? MediaQuery.sizeOf(context).width * 0.5,
           inactiveColor: waveformStyle?.inactiveColor ?? Colors.black38,
           activeColor: waveformStyle?.activeColor ?? Colors.blueAccent,
           showActiveWaveform: waveformStyle?.showActiveWaveform ?? true,
@@ -48,8 +50,8 @@ class Waveform extends StatelessWidget {
         );
       case WaveformType.rectangle:
         return RectangleWaveform(
-          height: waveformStyle?.height ?? 100,
-          width: waveformStyle?.width ?? double.maxFinite,
+          height: height ?? 100,
+          width: width ?? MediaQuery.sizeOf(context).width * 0.5,
           inactiveColor: waveformStyle?.inactiveColor ?? Colors.black38,
           activeColor: waveformStyle?.activeColor ?? Colors.blueAccent,
           showActiveWaveform: waveformStyle?.showActiveWaveform ?? true,
@@ -68,8 +70,8 @@ class Waveform extends StatelessWidget {
         );
       case WaveformType.curved:
         return CurvedPolygonWaveform(
-          height: waveformStyle?.height ?? 100,
-          width: waveformStyle?.width ?? double.maxFinite,
+          height: height ?? 100,
+          width: width ?? MediaQuery.sizeOf(context).width * 0.5,
           inactiveColor: waveformStyle?.inactiveColor ?? Colors.black38,
           activeColor: waveformStyle?.activeColor ?? Colors.blueAccent,
           showActiveWaveform: waveformStyle?.showActiveWaveform ?? true,
@@ -81,8 +83,8 @@ class Waveform extends StatelessWidget {
         );
       case WaveformType.polygon:
         return PolygonWaveform(
-          height: waveformStyle?.height ?? 100,
-          width: waveformStyle?.width ?? double.maxFinite,
+          height: height ?? 100,
+          width: width ?? MediaQuery.sizeOf(context).width * 0.5,
           inactiveColor: waveformStyle?.inactiveColor ?? Colors.black38,
           activeColor: waveformStyle?.activeColor ?? Colors.blueAccent,
           showActiveWaveform: waveformStyle?.showActiveWaveform ?? true,

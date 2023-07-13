@@ -11,8 +11,6 @@ class WaveformStyle {
   final Color? activeBorderColor;
   final Color? inactiveBorderColor;
   final bool? isRoundedRectangle;
-  final double? height;
-  final double? width;
   final bool? absolute;
   final bool? invert;
   final bool? showActiveWaveform;
@@ -27,8 +25,6 @@ class WaveformStyle {
       this.activeBorderColor,
       this.inactiveBorderColor,
       this.isRoundedRectangle,
-      this.height,
-      this.width,
       this.absolute,
       this.invert,
       this.showActiveWaveform,

@@ -15,14 +15,14 @@ abstract class WaveSource {
 }
 
 class AudioAssetSource extends WaveSource {
-  final String assetPath;
+  final String path;
 
-  AudioAssetSource({required this.assetPath});
+  AudioAssetSource({required this.path});
 
   @override
   Future<List<double>> get samples async {
     // Load the asset data as bytes
-    ByteData assetData = await rootBundle.load(assetPath);
+    ByteData assetData = await rootBundle.load(path);
     var numChannels = 1;
 
     // Write the PCM data to a temporary file
@@ -88,7 +88,7 @@ class AudioFileSource extends WaveSource {
           .toList();
     }
     // Delete the temporary file
-    await File(wavPath).delete();
+    File(wavPath).deleteSync();
     return _samples;
   }
 }

@@ -1,3 +1,4 @@
+// ignore: depend_on_referenced_packages
 import 'package:collection/collection.dart';
 
 /// Checks for new and old samples equality to decide whether to process samples

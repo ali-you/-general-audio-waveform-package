@@ -252,13 +252,14 @@ abstract class AudioWaveformState<T extends AudioWaveform> extends State<T> {
   void didUpdateWidget(covariant T oldWidget) {
     super.didUpdateWidget(oldWidget);
 
-    if (!checkForSamplesEquality(widget.samples!, oldWidget.samples!) &&
-        widget.samples!.isNotEmpty) {
-      processSamples();
-      _calculateSampleWidth();
-      _updateActiveIndex();
-      _updateActiveSamples();
-    }
+      if (!checkForSamplesEquality(widget.samples ?? [], oldWidget.samples ?? []) &&
+          widget.samples!.isNotEmpty) {
+        processSamples();
+        _calculateSampleWidth();
+        _updateActiveIndex();
+        _updateActiveSamples();
+      }
+
     if (widget.showActiveWaveform) {
       if (widget.elapsedDuration != oldWidget.elapsedDuration) {
         _updateActiveIndex();

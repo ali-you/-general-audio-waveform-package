@@ -37,19 +37,23 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   Duration elapsedTime = const Duration(seconds:0);
-  Duration maxDuration = const Duration(milliseconds: 100000);
+  Duration maxDuration = const Duration(seconds: 150);
+  List<double> samples = [];
 
-  String path = "/storage/emulated/0/Download/file_example_MP3_700KB.mp3";
-  // String path = "/storage/emulated/0/Download/file_example_MP3_1MG.mp3";
+  // String path = "/storage/emulated/0/Download/sample.mp3";
+  String path = "/storage/emulated/0/Download/file_example_MP3_1MG.mp3";
   // String path = "/sdcard/Download/sample.mp3";
 
   @override
   void initState() {
+
+    // getData();
+
     Timer.periodic(const Duration(seconds: 1), (timer) {
       if (elapsedTime.inSeconds < maxDuration.inSeconds) {
-        setState(() {
-          elapsedTime += const Duration(seconds: 1);
-        });
+        // setState(() {
+        //   elapsedTime += const Duration(seconds: 1);
+        // });
       }
       else{
         timer.cancel();
@@ -66,21 +70,52 @@ class _MyHomePageState extends State<MyHomePage> {
     ].request();
   }
 
+  Future<void> getData() async {
+    print("ooops${await GeneralAudioWaveformData(source: AudioFileSource(path: path)).getData()}");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: GeneralAudioWaveform(
-          scalingAlgorithm: ScalingAlgorithmType.average,
-          maxDuration: maxDuration,
-          elapsedDuration: elapsedTime,
-          elapsedIsChanged: (d){
-            setState(() {
-              elapsedTime = d;
-            });
-          },
-          source: AudioFileSource(path: path),
-          maxSamples: 50,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // GeneralAudioWaveform(
+            //   activeColor: Colors.red,
+            //   scalingAlgorithmType: ScalingAlgorithmType.average,
+            //   maxDuration: maxDuration,
+            //   elapsedDuration: elapsedTime,
+            //   elapsedIsChanged: (d){
+            //     setState(() {
+            //       elapsedTime = d;
+            //     });
+            //   },
+            //   source: AudioFileSource(path: path),
+            //   height: 100,
+            //   width: MediaQuery.of(context).size.width * 0.5 ,maxSamples: 50,
+            // ),
+            GeneralAudioWaveform(
+              scalingAlgorithmType: ScalingAlgorithmType.average,
+              waveformType: WaveformType.pulse,
+
+              maxDuration: maxDuration,
+              elapsedDuration: elapsedTime,
+              elapsedIsChanged: (d){
+                setState(() {
+                  elapsedTime = d;
+                });
+              },
+              // source: AudioAssetSource(assetName: "/assets/sample.mp3"),
+              source: AudioFileSource(path: path),
+              // height: 50,
+              // width: MediaQuery.of(context).size.width * 0.5 ,maxSamples: 50,
+            ),
+
+            TextButton(onPressed: (){
+              getData();
+            }, child: const Text("Get data"))
+          ],
         ),
       ),
     );

@@ -59,7 +59,7 @@ class PulseInActiveWaveformPainter extends InActiveWaveformPainter {
     for (var i = 0; i < samples.length; i++) {
       final x = sampleWidth * i;
       final y = -1 * samples[i].abs();
-      final rectangle = Rect.fromLTWH(x, alignPosition , sampleWidth, y );
+      final rectangle = Rect.fromLTWH(x, alignPosition , sampleWidth, y);
 
       //Draws the filled rectangles of the waveform.
       canvas

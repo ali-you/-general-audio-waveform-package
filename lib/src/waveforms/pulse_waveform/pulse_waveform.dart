@@ -77,7 +77,7 @@ class PulseWaveform extends AudioWaveform {
 class _PulseWaveformState extends AudioWaveformState<PulseWaveform> {
   @override
   Widget build(BuildContext context) {
-    if (widget.samples!.isEmpty) {
+    if (widget.samples?.isEmpty ?? true) {
       return const SizedBox.shrink();
     }
     final processedSamples = this.processedSamples;
@@ -108,9 +108,9 @@ class _PulseWaveformState extends AudioWaveformState<PulseWaveform> {
           CustomPaint(
             size: Size(widget.width, widget.height),
             isComplex: true,
-            painter: PulseInActiveWaveformPainter(
+            painter: PulseActiveWaveformPainter(
               color: widget.activeColor,
-              samples: activeSamples,
+              activeSamples: activeSamples,
               gradient: widget.activeGradient,
               waveformAlignment: waveformAlignment,
               borderColor: widget.activeBorderColor,
