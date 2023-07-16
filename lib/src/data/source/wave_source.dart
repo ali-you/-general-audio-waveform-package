@@ -76,10 +76,11 @@ class AudioFileSource extends WaveSource {
         throw "Error: ${await session.getLogsAsString()}";
       }
     }
+
     ///creating the wave
     if (canGetWave) {
       Wav wav = await Wav.readFile(wavPath);
-      _samples =  (wav.channels.toList())
+      _samples = (wav.channels.toList())
           .expand((element) => element)
           .map((e) => e.toDouble())
           .toList();
@@ -106,8 +107,10 @@ class AudioNetworkSource extends WaveSource {
 class AudioDateSource extends WaveSource {
   @override
   Future<List<double>> get samples async {
-    _samples = [];
-
     return _samples;
+  }
+
+  AudioDateSource(List<double> samples) {
+    _samples = samples;
   }
 }
