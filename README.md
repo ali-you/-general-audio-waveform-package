@@ -36,7 +36,7 @@ To start using the General Audio Waveforms package, follow these steps:
 ## Usage
 
 ```dart
-Genera7lAudioWaveform(
+GeneralAudioWaveform(
   scalingAlgorithmType: ScalingAlgorithmType.average,
   waveformType: WaveformType.pulse,
   maxDuration: maxDuration,

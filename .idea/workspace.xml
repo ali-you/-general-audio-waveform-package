@@ -4,20 +4,33 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfb99b1c-5055-4169-88d4-5cc3da552525" name="Changes" comment="new version (0.0.2)">
+    <list default="true" id="cfb99b1c-5055-4169-88d4-5cc3da552525" name="Changes" comment="Audio">
+      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/430ffb5cf98a523ea0d5f4ce634cb4ee/.filecache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/430ffb5cf98a523ea0d5f4ce634cb4ee/app.dill" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/430ffb5cf98a523ea0d5f4ce634cb4ee/debug_android_application.stamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/430ffb5cf98a523ea0d5f4ce634cb4ee/flutter_assets.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/430ffb5cf98a523ea0d5f4ce634cb4ee/gen_dart_plugin_registrant.stamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/430ffb5cf98a523ea0d5f4ce634cb4ee/gen_localizations.stamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/430ffb5cf98a523ea0d5f4ce634cb4ee/kernel_snapshot.d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/430ffb5cf98a523ea0d5f4ce634cb4ee/kernel_snapshot.stamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/430ffb5cf98a523ea0d5f4ce634cb4ee/outputs.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/data/source/audio_asset_source.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/data/source/audio_data_source.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/data/source/audio_file_source.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/data/source/audio_network_source.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/version" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/general-audio-waveform-package.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/general-audio-waveform-package.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/example/.dart_tool/package_config_subset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/example/.dart_tool/version" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/data/source/wave_source.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data/source/wave_source.dart" afterDir="false" />
     </list>
@@ -34,7 +47,7 @@
     </option>
   </component>
   <component name="Git.Merge.Settings">
-    <option name="BRANCH" value="waveform_class" />
+    <option name="BRANCH" value="origin/Read-me" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
