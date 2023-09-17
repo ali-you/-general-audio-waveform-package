@@ -1,12 +1,11 @@
 import 'wave_source.dart';
 
 class AudioDateSource extends WaveSource {
-  @override
-  Future<List<double>> get samples async {
-    return _samples;
-  }
+  AudioDateSource({required List<double> samples}) : super(samples: samples);
 
-  AudioDateSource(List<double> samples) {
-    _samples = samples;
+  @override
+  Future<void> evaluate() {
+    // TODO: implement evaluate -> scaling ??
+    throw UnimplementedError();
   }
 }

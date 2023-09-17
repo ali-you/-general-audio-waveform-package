@@ -15,7 +15,7 @@ class AudioAssetSource extends WaveSource {
   AudioAssetSource({required this.path});
 
   @override
-  Future<List<double>> get samples async {
+  Future<void> evaluate() async {
 
     // Load the asset data as bytes
     ByteData assetData = await rootBundle.load(path);
@@ -52,6 +52,5 @@ class AudioAssetSource extends WaveSource {
           .map((e) => e.toDouble())
           .toList();
     }
-    return samples;
   }
 }

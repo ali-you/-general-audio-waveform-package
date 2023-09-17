@@ -5,34 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cfb99b1c-5055-4169-88d4-5cc3da552525" name="Changes" comment="Audio">
-      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/430ffb5cf98a523ea0d5f4ce634cb4ee/.filecache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/430ffb5cf98a523ea0d5f4ce634cb4ee/app.dill" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/430ffb5cf98a523ea0d5f4ce634cb4ee/debug_android_application.stamp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/430ffb5cf98a523ea0d5f4ce634cb4ee/flutter_assets.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/430ffb5cf98a523ea0d5f4ce634cb4ee/gen_dart_plugin_registrant.stamp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/430ffb5cf98a523ea0d5f4ce634cb4ee/gen_localizations.stamp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/430ffb5cf98a523ea0d5f4ce634cb4ee/kernel_snapshot.d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/430ffb5cf98a523ea0d5f4ce634cb4ee/kernel_snapshot.stamp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/example/.dart_tool/flutter_build/430ffb5cf98a523ea0d5f4ce634cb4ee/outputs.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/data/source/audio_asset_source.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/data/source/audio_data_source.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/data/source/audio_file_source.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/data/source/audio_network_source.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/version" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/example/.dart_tool/package_config_subset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/example/.dart_tool/version" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Flutter/Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Flutter/Generated.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/macos/Flutter/ephemeral/Flutter-Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/example/macos/Flutter/ephemeral/Flutter-Generated.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/macos/Flutter/ephemeral/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/example/macos/Flutter/ephemeral/flutter_export_environment.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/general_audio_waveforms.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/general_audio_waveforms.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/data/source/audio_asset_source.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data/source/audio_asset_source.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/data/source/audio_data_source.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data/source/audio_data_source.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/data/source/audio_file_source.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data/source/audio_file_source.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/data/source/audio_network_source.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data/source/audio_network_source.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/data/source/wave_source.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data/source/wave_source.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/ephemeral/Flutter-Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/ephemeral/Flutter-Generated.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/ephemeral/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/ephemeral/flutter_export_environment.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +50,18 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/CHANGELOG.md" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/example/lib/main.dart" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/lib/general_audio_waveforms.dart" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/lib/src/core/waveform_painters_ab.dart" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/lib/src/data/source/wave_source.dart" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/lib/src/general_audio_waveform.dart" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/lib/src/general_audio_waveform_data.dart" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/lib/src/waveforms/common/waveform_type.dart" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/lib/src/waveforms/curved_polygon_waveform/curved_polygon_waveform.dart" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/pubspec.yaml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

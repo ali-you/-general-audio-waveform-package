@@ -13,7 +13,7 @@ class AudioFileSource extends WaveSource {
   AudioFileSource({required this.path});
 
   @override
-  Future<List<double>> get samples async {
+  Future<void> evaluate() async {
     String wavPath = path.replaceRange(path.length - 3, path.length, "wav");
     bool fileExist = await File(wavPath).exists();
     bool canGetWave = fileExist;
@@ -30,13 +30,12 @@ class AudioFileSource extends WaveSource {
     ///creating the wave
     if (canGetWave) {
       Wav wav = await Wav.readFile(wavPath);
-      _samples = (wav.channels.toList())
+      samples = (wav.channels.toList())
           .expand((element) => element)
           .map((e) => e.toDouble())
           .toList();
     }
     // Delete the temporary file
     File(wavPath).deleteSync();
-    return _samples;
   }
 }
