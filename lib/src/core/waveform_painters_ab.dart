@@ -107,7 +107,7 @@ abstract class InActiveWaveformPainter extends WaveformPainter {
     required double sampleWidth,
     PaintingStyle style = PaintingStyle.stroke,
     this.borderWidth = 0.0,
-    this.borderColor =  Colors.black26,
+    this.borderColor = Colors.black26,
   }) : super(
           samples: samples,
           color: color,

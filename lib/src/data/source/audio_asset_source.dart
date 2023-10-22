@@ -16,7 +16,6 @@ class AudioAssetSource extends WaveSource {
 
   @override
   Future<void> evaluate() async {
-
     // Load the asset data as bytes
     ByteData assetData = await rootBundle.load(path);
     // var numChannels = 1;
@@ -44,10 +43,11 @@ class AudioAssetSource extends WaveSource {
         throw "Error: ${await session.getLogsAsString()}";
       }
     }
+
     ///creating the wave
     if (canGetWave) {
       Wav wav = await Wav.readFile(wavPath);
-      samples =  (wav.channels.toList())
+      samples = (wav.channels.toList())
           .expand((element) => element)
           .map((e) => e.toDouble())
           .toList();

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:general_audio_waveforms/src/util/waveform_alignment.dart';
 
 class WaveformStyle {
-
   final Color? activeColor;
   final Color? inactiveColor;
   final Gradient? activeGradient;
@@ -29,7 +28,4 @@ class WaveformStyle {
       this.invert,
       this.showActiveWaveform,
       this.waveformAlignment = WaveformAlignment.center});
-
-
-
 }

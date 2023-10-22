@@ -21,25 +21,27 @@ import 'package:general_audio_waveforms/src/waveforms/pulse_waveform/inactive_wa
 ///```
 /// {@end-tool}
 class PulseWaveform extends AudioWaveform {
-  PulseWaveform({
-    super.key,
-    required super.height,
-    required super.width,
-    super.maxDuration,
-    super.elapsedDuration,
-    this.activeColor = Colors.red,
-    this.inactiveColor = Colors.blue,
-    this.activeGradient,
-    this.inactiveGradient,
-    this.borderWidth = 1.0,
-    this.activeBorderColor = Colors.white,
-    this.inactiveBorderColor = Colors.white,
-    super.showActiveWaveform = true,
-    /// by default it is absolute. if you want to make each pulse paint in the half of its current height make it false
-    super.absolute = true,
-    super.invert = false,
-    this.isRoundedRectangle = false, required super.samples
-  }) : assert(
+  PulseWaveform(
+      {super.key,
+      required super.height,
+      required super.width,
+      super.maxDuration,
+      super.elapsedDuration,
+      this.activeColor = Colors.red,
+      this.inactiveColor = Colors.blue,
+      this.activeGradient,
+      this.inactiveGradient,
+      this.borderWidth = 1.0,
+      this.activeBorderColor = Colors.white,
+      this.inactiveBorderColor = Colors.white,
+      super.showActiveWaveform = true,
+
+      /// by default it is absolute. if you want to make each pulse paint in the half of its current height make it false
+      super.absolute = true,
+      super.invert = false,
+      this.isRoundedRectangle = false,
+      required super.samples})
+      : assert(
           borderWidth >= 0 && borderWidth <= 3.0,
           'BorderWidth must be between 0 and 3',
         );
@@ -68,10 +70,8 @@ class PulseWaveform extends AudioWaveform {
   /// If true then rounded rectangles are drawn instead of regular rectangles.
   final bool isRoundedRectangle;
 
-
   @override
-  AudioWaveformState<PulseWaveform> createState() =>
-      _PulseWaveformState();
+  AudioWaveformState<PulseWaveform> createState() => _PulseWaveformState();
 }
 
 class _PulseWaveformState extends AudioWaveformState<PulseWaveform> {

@@ -10,8 +10,8 @@ class Waveform extends StatelessWidget {
       {Key? key,
       required this.waveformType,
       this.waveformStyle,
-        this.height,
-        this.width,
+      this.height,
+      this.width,
       required this.elapsedDuration,
       required this.maxDuration,
       this.samples})

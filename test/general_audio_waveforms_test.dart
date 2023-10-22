@@ -2,6 +2,4 @@
 
 // import 'package:general_audio_waveforms/general_audio_waveforms.dart';
 
-void main() {
-
-}
+void main() {}

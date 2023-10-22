@@ -1,6 +1,1 @@
-enum WaveformType{
-  pulse,
-  rectangle,
-  curved,
-  polygon
-}
+enum WaveformType { pulse, rectangle, curved, polygon }

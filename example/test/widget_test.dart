@@ -7,5 +7,4 @@
 
 import 'package:example/main.dart';
 
-void main() {
-}
+void main() {}

@@ -9,7 +9,7 @@ class AverageAlgorithm extends ScalingAlgorithm {
     int j = 1;
     var blockSize = (samples.length / maxSample).round();
     for (int i = 0; i < samples.length; i++) {
-      var sample = samples.elementAt(i) ;
+      var sample = samples.elementAt(i);
       sum += sample;
       if (j == blockSize) {
         newSamples.add(sum / blockSize);

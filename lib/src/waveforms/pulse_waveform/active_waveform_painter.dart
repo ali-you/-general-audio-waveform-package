@@ -36,28 +36,16 @@ class PulseActiveWaveformPainter extends ActiveWaveformPainter {
 
     if (isRoundedRectangle) {
       drawRoundedRectangles(
-        canvas,
-        alignPosition,
-        activeTrackPaint,
-        borderPaint
-      );
+          canvas, alignPosition, activeTrackPaint, borderPaint);
     } else {
       drawRegularRectangles(
-        canvas,
-        alignPosition,
-        activeTrackPaint,
-        borderPaint
-      );
+          canvas, alignPosition, activeTrackPaint, borderPaint);
     }
   }
 
   // ignore: long-parameter-list
   void drawRegularRectangles(
-    Canvas canvas,
-    double alignPosition,
-    Paint paint,
-    Paint borderPaint
-  ) {
+      Canvas canvas, double alignPosition, Paint paint, Paint borderPaint) {
     for (var i = 0; i < activeSamples.length; i++) {
       final x = sampleWidth * i;
       final y = -1 * activeSamples[i].abs();
@@ -77,11 +65,7 @@ class PulseActiveWaveformPainter extends ActiveWaveformPainter {
 
   // ignore: long-parameter-list
   void drawRoundedRectangles(
-    Canvas canvas,
-    double alignPosition,
-    Paint paint,
-    Paint borderPaint
-  ) {
+      Canvas canvas, double alignPosition, Paint paint, Paint borderPaint) {
     for (var i = 0; i < activeSamples.length; i++) {
       if (i.isEven) {
         final x = sampleWidth * i;
@@ -112,6 +96,6 @@ class PulseActiveWaveformPainter extends ActiveWaveformPainter {
   bool shouldRepaint(covariant PulseActiveWaveformPainter oldDelegate) {
     // TODO: implement shouldRepaint
     return getShouldRepaintValue(oldDelegate) ||
-        isRoundedRectangle != oldDelegate.isRoundedRectangle ;
+        isRoundedRectangle != oldDelegate.isRoundedRectangle;
   }
 }

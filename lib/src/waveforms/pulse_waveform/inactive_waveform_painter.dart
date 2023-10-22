@@ -31,21 +31,11 @@ class PulseInActiveWaveformPainter extends InActiveWaveformPainter {
       ..color = borderColor
       ..strokeWidth = borderWidth > sampleWidth ? 0 : borderWidth;
     final alignPosition = size.height;
-    
+
     if (isRoundedRectangle) {
-      drawRoundedRectangles(
-        canvas,
-        alignPosition,
-        paint,
-        borderPaint
-      );
+      drawRoundedRectangles(canvas, alignPosition, paint, borderPaint);
     } else {
-      drawRegularRectangles(
-        canvas,
-        alignPosition,
-        paint,
-        borderPaint
-      );
+      drawRegularRectangles(canvas, alignPosition, paint, borderPaint);
     }
   }
 
@@ -59,7 +49,7 @@ class PulseInActiveWaveformPainter extends InActiveWaveformPainter {
     for (var i = 0; i < samples.length; i++) {
       final x = sampleWidth * i;
       final y = -1 * samples[i].abs();
-      final rectangle = Rect.fromLTWH(x, alignPosition , sampleWidth, y);
+      final rectangle = Rect.fromLTWH(x, alignPosition, sampleWidth, y);
 
       //Draws the filled rectangles of the waveform.
       canvas
@@ -75,21 +65,15 @@ class PulseInActiveWaveformPainter extends InActiveWaveformPainter {
     }
   }
 
-
-
   // ignore: long-parameter-list
   void drawRoundedRectangles(
-    Canvas canvas,
-    double alignPosition,
-    Paint paint,
-    Paint borderPaint
-  ) {
+      Canvas canvas, double alignPosition, Paint paint, Paint borderPaint) {
     final radius = Radius.circular(sampleWidth);
     for (var i = 0; i < samples.length; i++) {
       if (i.isEven) {
         final x = sampleWidth * i;
         final y = -1 * samples[i].abs();
-        final rectangle = Rect.fromLTWH(x, alignPosition , sampleWidth, y );
+        final rectangle = Rect.fromLTWH(x, alignPosition, sampleWidth, y);
         //Draws the filled rectangles of the waveform.
         canvas
           ..drawRRect(
@@ -115,6 +99,6 @@ class PulseInActiveWaveformPainter extends InActiveWaveformPainter {
   bool shouldRepaint(covariant PulseInActiveWaveformPainter oldDelegate) {
     // TODO: implement shouldRepaint
     return getShouldRepaintValue(oldDelegate) ||
-        isRoundedRectangle != oldDelegate.isRoundedRectangle ;
+        isRoundedRectangle != oldDelegate.isRoundedRectangle;
   }
 }

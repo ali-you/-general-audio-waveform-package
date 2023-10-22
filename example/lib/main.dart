@@ -36,7 +36,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  Duration elapsedTime = const Duration(seconds:0);
+  Duration elapsedTime = const Duration(seconds: 0);
   Duration maxDuration = const Duration(seconds: 150);
   List<double> samples = [];
 
@@ -46,7 +46,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-
     // getData();
 
     Timer.periodic(const Duration(seconds: 1), (timer) {
@@ -54,8 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // setState(() {
         //   elapsedTime += const Duration(seconds: 1);
         // });
-      }
-      else{
+      } else {
         timer.cancel();
       }
     });
@@ -71,7 +69,8 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future<void> getData() async {
-    print("ooops${await GeneralAudioWaveformData(source: AudioFileSource(path: path)).getData()}");
+    print(
+        "ooops${await GeneralAudioWaveformData(source: AudioFileSource(path: path)).getData()}");
   }
 
   @override
@@ -100,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
               waveformType: WaveformType.pulse,
               maxDuration: maxDuration,
               elapsedDuration: elapsedTime,
-              elapsedIsChanged: (d){
+              elapsedIsChanged: (d) {
                 setState(() {
                   elapsedTime = d;
                 });
@@ -111,9 +110,11 @@ class _MyHomePageState extends State<MyHomePage> {
               // width: MediaQuery.of(context).size.width * 0.5 ,maxSamples: 50,
             ),
 
-            TextButton(onPressed: (){
-              getData();
-            }, child: const Text("Get data"))
+            TextButton(
+                onPressed: () {
+                  getData();
+                },
+                child: const Text("Get data"))
           ],
         ),
       ),

@@ -1,4 +1,3 @@
-
 abstract class WaveSource {
   List<double> samples;
 

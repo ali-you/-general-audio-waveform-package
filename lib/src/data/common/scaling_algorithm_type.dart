@@ -1,1 +1,1 @@
-enum ScalingAlgorithmType{ average,median,none }
+enum ScalingAlgorithmType { average, median, none }

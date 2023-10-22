@@ -39,7 +39,8 @@ class GeneralAudioWaveform extends StatefulWidget {
       this.absolute = false,
       this.invert = false,
       this.showActiveWaveform = true,
-      this.waveformAlignment = WaveformAlignment.center, this.waveformStyle});
+      this.waveformAlignment = WaveformAlignment.center,
+      this.waveformStyle});
 
   @override
   State<GeneralAudioWaveform> createState() => _GeneralAudioWaveformState();
@@ -63,7 +64,11 @@ class _GeneralAudioWaveformState extends State<GeneralAudioWaveform> {
         alignment: Alignment.bottomCenter,
         children: [
           // waveWidget(),
-          Waveform(waveformType: widget.waveformType, elapsedDuration: widget.elapsedDuration, maxDuration: widget.maxDuration, samples: samples),
+          Waveform(
+              waveformType: widget.waveformType,
+              elapsedDuration: widget.elapsedDuration,
+              maxDuration: widget.maxDuration,
+              samples: samples),
 
           Theme(
             data: ThemeData(
@@ -71,14 +76,13 @@ class _GeneralAudioWaveformState extends State<GeneralAudioWaveform> {
                     thumbShape: SliderComponentShape.noOverlay,
                     activeTrackColor: Colors.transparent,
                     inactiveTrackColor: Colors.transparent,
-                    overlayShape: SliderComponentShape.noThumb)
-            ),
+                    overlayShape: SliderComponentShape.noThumb)),
             child: Slider(
                 value: ((widget.elapsedDuration).inMilliseconds).toDouble(),
                 max: ((widget.maxDuration).inMilliseconds).toDouble(),
                 onChanged: (double value) {
-                    widget.elapsedIsChanged(
-                        Duration(milliseconds: value.toInt()));
+                  widget
+                      .elapsedIsChanged(Duration(milliseconds: value.toInt()));
                 }),
           ),
         ],
@@ -97,17 +101,15 @@ class _GeneralAudioWaveformState extends State<GeneralAudioWaveform> {
         break;
 
       case ScalingAlgorithmType.average:
-        samples =
-            AverageAlgorithm(samples: tempSamples, maxSample: widget.maxSamples ?? 100)
-                .execute();
+        samples = AverageAlgorithm(
+                samples: tempSamples, maxSample: widget.maxSamples ?? 100)
+            .execute();
         break;
       case ScalingAlgorithmType.median:
-        samples =
-            MedianAlgorithm(samples: tempSamples, maxSample: widget.maxSamples ?? 100)
-                .execute();
+        samples = MedianAlgorithm(
+                samples: tempSamples, maxSample: widget.maxSamples ?? 100)
+            .execute();
         break;
-
     }
   }
 }
-

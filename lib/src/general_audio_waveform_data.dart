@@ -9,7 +9,8 @@ class GeneralAudioWaveformData {
 
   GeneralAudioWaveformData(
       {required this.source,
-      this.scalingAlgorithmType = ScalingAlgorithmType.average, this.maxSamples});
+      this.scalingAlgorithmType = ScalingAlgorithmType.average,
+      this.maxSamples});
 
   Future<List<double>?> getData() async {
     // List<double>? orgSamples = await source.samples;
@@ -26,11 +27,9 @@ class GeneralAudioWaveformData {
                 .execute();
         break;
       case ScalingAlgorithmType.median:
-        res =
-            MedianAlgorithm(samples: orgSamples, maxSample: maxSamples ?? 100)
-                .execute();
+        res = MedianAlgorithm(samples: orgSamples, maxSample: maxSamples ?? 100)
+            .execute();
         break;
-
     }
     return res;
   }

@@ -1,5 +1,3 @@
-
-
 import 'dart:io';
 
 import 'package:ffmpeg_kit_flutter/ffmpeg_kit.dart';
@@ -17,13 +15,11 @@ import 'package:wav/wav.dart';
 ///   //TODO
 ///```
 /// {@end-tool}
- class Decoder {
-
+class Decoder {
   /// Local Path
   final String path;
 
   Decoder({required this.path});
-
 
   Future<List<double>> extract() async {
     String wavPath = path.replaceRange(path.length - 3, path.length, "wav");
