@@ -12,7 +12,8 @@ class GeneralAudioWaveformData {
       this.scalingAlgorithmType = ScalingAlgorithmType.average, this.maxSamples});
 
   Future<List<double>?> getData() async {
-    List<double>? orgSamples = await source.samples;
+    // List<double>? orgSamples = await source.samples;
+    List<double>? orgSamples = source.samples;
     List<double>? res;
     switch (scalingAlgorithmType) {
       case ScalingAlgorithmType.none:

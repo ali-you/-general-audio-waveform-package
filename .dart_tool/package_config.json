@@ -39,7 +39,7 @@
     },
     {
       "name": "ffmpeg_kit_flutter",
-      "rootUri": "file:///Users/aliyou/.pub-cache/hosted/pub.dev/ffmpeg_kit_flutter-6.0.3",
+      "rootUri": "file:///Users/aliyou/.pub-cache/hosted/pub.dev/ffmpeg_kit_flutter-5.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -170,7 +170,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-10-22T09:08:39.262572Z",
+  "generated": "2023-10-22T12:35:58.134922Z",
   "generator": "pub",
   "generatorVersion": "3.1.2"
 }

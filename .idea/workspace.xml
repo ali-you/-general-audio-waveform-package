@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfb99b1c-5055-4169-88d4-5cc3da552525" name="Changes" comment="input data types classes separated" />
+    <list default="true" id="cfb99b1c-5055-4169-88d4-5cc3da552525" name="Changes" comment="dependencies updated">
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/data/source/audio_asset_source.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data/source/audio_asset_source.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/general_audio_waveform.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/general_audio_waveform.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/general_audio_waveform_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/general_audio_waveform_data.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -194,7 +202,21 @@
       <option name="project" value="LOCAL" />
       <updated>1694930813371</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="dependencies updated">
+      <created>1697965756118</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1697965756118</updated>
+    </task>
+    <task id="LOCAL-00017" summary="dependencies updated">
+      <created>1697965798187</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1697965798187</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -237,6 +259,7 @@
     <MESSAGE value="general_audio_waveform_data.dart added, inputs changed, audio_waveform.dart changed" />
     <MESSAGE value="new version (0.0.2)" />
     <MESSAGE value="input data types classes separated" />
-    <option name="LAST_COMMIT_MESSAGE" value="input data types classes separated" />
+    <MESSAGE value="dependencies updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="dependencies updated" />
   </component>
 </project>
