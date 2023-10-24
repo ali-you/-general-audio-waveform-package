@@ -24,23 +24,26 @@ class GeneralAudioWaveform extends StatefulWidget {
   final bool invert;
   final bool showActiveWaveform;
   final WaveformAlignment waveformAlignment;
+  final bool scrollable;
 
-  GeneralAudioWaveform(
-      {super.key,
-      this.scalingAlgorithmType = ScalingAlgorithmType.average,
-      this.waveformType = WaveformType.pulse,
-      required this.source,
-      this.maxSamples = 100,
-      this.height,
-      this.width,
-      required this.maxDuration,
-      required this.elapsedDuration,
-      required this.elapsedIsChanged,
-      this.absolute = false,
-      this.invert = false,
-      this.showActiveWaveform = true,
-      this.waveformAlignment = WaveformAlignment.center,
-      this.waveformStyle});
+  GeneralAudioWaveform({
+    super.key,
+    this.scalingAlgorithmType = ScalingAlgorithmType.average,
+    this.waveformType = WaveformType.pulse,
+    required this.source,
+    this.maxSamples = 100,
+    this.height,
+    this.width,
+    required this.maxDuration,
+    required this.elapsedDuration,
+    required this.elapsedIsChanged,
+    this.absolute = false,
+    this.invert = false,
+    this.showActiveWaveform = true,
+    this.waveformAlignment = WaveformAlignment.center,
+    this.waveformStyle,
+    this.scrollable = true,
+  });
 
   @override
   State<GeneralAudioWaveform> createState() => _GeneralAudioWaveformState();
@@ -68,21 +71,21 @@ class _GeneralAudioWaveformState extends State<GeneralAudioWaveform> {
               elapsedDuration: widget.elapsedDuration,
               maxDuration: widget.maxDuration,
               samples: samples),
-          Theme(
-            data: ThemeData(
-                sliderTheme: SliderThemeData(
-                    thumbShape: SliderComponentShape.noOverlay,
-                    activeTrackColor: Colors.transparent,
-                    inactiveTrackColor: Colors.transparent,
-                    overlayShape: SliderComponentShape.noThumb)),
-            child: Slider(
-                value: ((widget.elapsedDuration).inMilliseconds).toDouble(),
-                max: ((widget.maxDuration).inMilliseconds).toDouble(),
-                onChanged: (double value) {
-                  widget
-                      .elapsedIsChanged(Duration(milliseconds: value.toInt()));
-                }),
-          ),
+          if (widget.scrollable)
+            Theme(
+              data: ThemeData(
+                  sliderTheme: SliderThemeData(
+                      thumbShape: SliderComponentShape.noOverlay,
+                      activeTrackColor: Colors.transparent,
+                      inactiveTrackColor: Colors.transparent,
+                      overlayShape: SliderComponentShape.noThumb)),
+              child: Slider(
+                  value: ((widget.elapsedDuration).inMilliseconds).toDouble(),
+                  max: ((widget.maxDuration).inMilliseconds).toDouble(),
+                  onChanged: (double value) {
+                    widget.elapsedIsChanged(Duration(milliseconds: value.toInt()));
+                  }),
+            ),
         ],
       ),
     );
@@ -100,14 +103,12 @@ class _GeneralAudioWaveformState extends State<GeneralAudioWaveform> {
         break;
 
       case ScalingAlgorithmType.average:
-        samples = AverageAlgorithm(
-                samples: tempSamples, maxSample: widget.maxSamples ?? 100)
-            .execute();
+        samples =
+            AverageAlgorithm(samples: tempSamples, maxSample: widget.maxSamples ?? 100).execute();
         break;
       case ScalingAlgorithmType.median:
-        samples = MedianAlgorithm(
-                samples: tempSamples, maxSample: widget.maxSamples ?? 100)
-            .execute();
+        samples =
+            MedianAlgorithm(samples: tempSamples, maxSample: widget.maxSamples ?? 100).execute();
         break;
     }
   }
