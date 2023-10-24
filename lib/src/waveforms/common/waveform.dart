@@ -7,15 +7,14 @@ import 'package:general_audio_waveforms/src/waveforms/rectangle_waveform/rectang
 
 class Waveform extends StatelessWidget {
   const Waveform(
-      {Key? key,
+      {super.key,
       required this.waveformType,
       this.waveformStyle,
       this.height,
       this.width,
       required this.elapsedDuration,
       required this.maxDuration,
-      this.samples})
-      : super(key: key);
+      this.samples});
 
   final WaveformType waveformType;
   final WaveformStyle? waveformStyle;

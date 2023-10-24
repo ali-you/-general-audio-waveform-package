@@ -1,7 +1,7 @@
 import 'wave_source.dart';
 
 class AudioDateSource extends WaveSource {
-  AudioDateSource({required List<double> samples}) : super(samples: samples);
+  AudioDateSource({required super.samples});
 
   @override
   Future<void> evaluate() {

@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future<void> getData() async {
-    print(
+    debugPrint(
         "ooops${await GeneralAudioWaveformData(source: AudioFileSource(path: path)).getData()}");
   }
 

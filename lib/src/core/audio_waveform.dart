@@ -29,7 +29,7 @@ bool debugMaxandElapsedDuration(
 abstract class AudioWaveform extends StatefulWidget {
   /// Constructor for [AudioWaveform]
   AudioWaveform({
-    Key? key,
+    super.key,
     this.samples,
     required this.height,
     required this.width,
@@ -63,8 +63,7 @@ abstract class AudioWaveform extends StatefulWidget {
             ? invert
                 ? WaveformAlignment.top
                 : WaveformAlignment.bottom
-            : WaveformAlignment.center,
-        super(key: key);
+            : WaveformAlignment.center;
 
   /// Audio samples raw input.
   /// This raw samples are processed before being used to paint the waveform.

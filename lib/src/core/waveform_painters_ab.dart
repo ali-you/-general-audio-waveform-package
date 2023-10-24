@@ -42,8 +42,8 @@ abstract class WaveformPainter extends CustomPainter {
 abstract class ActiveWaveformPainter extends WaveformPainter {
   // ignore: public_member_api_docs
   ActiveWaveformPainter({
-    required Color color,
-    required Gradient? gradient,
+    required super.color,
+    required super.gradient,
     // Do we really need to pass the samples here?. I believe
     // [ActiveWaveformPainter] should only care about the [activeSamples] value.
     // If [samples] changes, then [activeSamples] should change as well so it's
@@ -51,19 +51,14 @@ abstract class ActiveWaveformPainter extends WaveformPainter {
     // Only if ActiveWaveformPainter depends on samples in future for any
     // reasons, then we should pass them here.
     // required List<double> samples,
-    required double sampleWidth,
+    required super.sampleWidth,
     required this.activeSamples,
-    required WaveformAlignment waveformAlignment,
-    PaintingStyle style = PaintingStyle.stroke,
+    required super.waveformAlignment,
+    super.style = PaintingStyle.stroke,
     this.borderWidth = 0.0,
     this.borderColor = Colors.black26,
   }) : super(
-          samples: [], //samples,
-          color: color,
-          gradient: gradient,
-          waveformAlignment: waveformAlignment,
-          sampleWidth: sampleWidth,
-          style: style,
+          samples: [],
         );
 
   ///The active samples used to paint the waveform.
@@ -100,22 +95,15 @@ abstract class ActiveWaveformPainter extends WaveformPainter {
 abstract class InActiveWaveformPainter extends WaveformPainter {
   // ignore: public_member_api_docs
   InActiveWaveformPainter({
-    required Color color,
-    required Gradient? gradient,
-    required List<double> samples,
-    required WaveformAlignment waveformAlignment,
-    required double sampleWidth,
-    PaintingStyle style = PaintingStyle.stroke,
+    required super.color,
+    required super.gradient,
+    required super.samples,
+    required super.waveformAlignment,
+    required super.sampleWidth,
+    super.style = PaintingStyle.stroke,
     this.borderWidth = 0.0,
     this.borderColor = Colors.black26,
-  }) : super(
-          samples: samples,
-          color: color,
-          gradient: gradient,
-          waveformAlignment: waveformAlignment,
-          sampleWidth: sampleWidth,
-          style: style,
-        );
+  });
 
   /// Stroke/Border Width
   final double borderWidth;
@@ -149,20 +137,16 @@ abstract class ActiveInActiveWaveformPainter extends WaveformPainter {
   // ignore: public_member_api_docs
   ActiveInActiveWaveformPainter({
     required this.activeColor,
-    required List<double> samples,
-    required double sampleWidth,
+    required super.samples,
+    required super.sampleWidth,
     required this.inactiveColor,
     required this.activeRatio,
-    required WaveformAlignment waveformAlignment,
-    PaintingStyle style = PaintingStyle.stroke,
+    required super.waveformAlignment,
+    super.style = PaintingStyle.stroke,
     required this.strokeWidth,
   }) : super(
-          samples: samples,
           color: inactiveColor,
           gradient: null,
-          waveformAlignment: waveformAlignment,
-          sampleWidth: sampleWidth,
-          style: style,
         );
 
   ///The color of the active waveform.
