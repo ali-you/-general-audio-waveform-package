@@ -29,9 +29,6 @@ class AudioAssetSource extends WaveSource {
     String wavPath = '${Directory.systemTemp.path}/output.wav';
     FFmpegKitConfig.enableLogCallback(null); // Disable logging
     FFmpegKitConfig.enableStatisticsCallback(null); // Disable statistics
-    // FFmpegSession session = await FFmpegKit.executeAsync(
-    //     '-f s16le -ar 44100 -ac $numChannels -i $pcmPath $wavPath',
-    //     null);
     bool fileExist = await File(wavPath).exists();
     bool canGetWave = fileExist;
 

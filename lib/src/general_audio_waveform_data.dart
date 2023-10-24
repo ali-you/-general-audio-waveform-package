@@ -13,7 +13,7 @@ class GeneralAudioWaveformData {
       this.maxSamples});
 
   Future<List<double>?> getData() async {
-    // List<double>? orgSamples = await source.samples;
+    await source.evaluate();
     List<double>? orgSamples = source.samples;
     List<double>? res;
     switch (scalingAlgorithmType) {

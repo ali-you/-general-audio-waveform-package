@@ -10,7 +10,9 @@ import 'wave_source.dart';
 class AudioFileSource extends WaveSource {
   final String path;
 
-  AudioFileSource({required this.path});
+  AudioFileSource({required this.path}){
+    evaluate();
+  }
 
   @override
   Future<void> evaluate() async {

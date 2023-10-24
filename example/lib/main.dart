@@ -38,10 +38,10 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   Duration elapsedTime = const Duration(seconds: 0);
   Duration maxDuration = const Duration(seconds: 150);
-  List<double> samples = [];
+  // List<double> samples = [];
 
   // String path = "/storage/emulated/0/Download/sample.mp3";
-  String path = "/storage/emulated/0/Download/file_example_MP3_1MG.mp3";
+  String path = "/storage/emulated/0/Download/file_example_MP3_700KB.mp3";
   // String path = "/sdcard/Download/sample.mp3";
 
   @override
@@ -69,8 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future<void> getData() async {
-    debugPrint(
-        "ooops${await GeneralAudioWaveformData(source: AudioFileSource(path: path)).getData()}");
+    debugPrint("ooops${await GeneralAudioWaveformData(source: AudioFileSource(path: path)).getData()}");
   }
 
   @override
@@ -96,6 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
             // ),
             GeneralAudioWaveform(
               scalingAlgorithmType: ScalingAlgorithmType.average,
+              source: AudioAssetSource(path: "assets/sample.mp3"),
               waveformType: WaveformType.pulse,
               maxDuration: maxDuration,
               elapsedDuration: elapsedTime,
@@ -104,7 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   elapsedTime = d;
                 });
               },
-              source: AudioAssetSource(path: "assets/sample.mp3"),
+
               // source: AudioFileSource(path: path),
               // height: 50,
               // width: MediaQuery.of(context).size.width * 0.5 ,maxSamples: 50,

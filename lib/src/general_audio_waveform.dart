@@ -63,13 +63,11 @@ class _GeneralAudioWaveformState extends State<GeneralAudioWaveform> {
       child: Stack(
         alignment: Alignment.bottomCenter,
         children: [
-          // waveWidget(),
           Waveform(
               waveformType: widget.waveformType,
               elapsedDuration: widget.elapsedDuration,
               maxDuration: widget.maxDuration,
               samples: samples),
-
           Theme(
             data: ThemeData(
                 sliderTheme: SliderThemeData(
@@ -91,10 +89,11 @@ class _GeneralAudioWaveformState extends State<GeneralAudioWaveform> {
   }
 
   Future<void> setSamples() async {
-    // List<double> tempSamples = await widget.source.samples; // important (while merge)
-    List<double> tempSamples = widget.source.samples; // important (while merge)
-    // List<double> tempSamples = [-10, -20,-10, 200, -20,-10, -20, -20,-10, -20, -20,-10, -20, -20,-10, -20, -20,-10, -20, -20,-10, -20, 500,-10, -20, -200,-10, -20, -20,-10, -20, -20,-10, -20, -20,-10, -20, -20,-100, -20, -20,-10, -20, -20,-10, -20, -20,-10, -20, -20,-10, -20, -20,-10, -20, -20,-10, -20, -20,-10, -20, -20,-10, -20, -20,-10, -20, -20,-10, -20, -20,-10, -20, -20,-10, -20, -20,-10, -20, -20,-10, -20, -20,-10, -20, -20,-10, -20, -20,-10, -20, -20,-10, -20]; // important (while merge)
-
+    await widget.source.evaluate();
+    List<double> tempSamples = [];
+    setState(() {
+      tempSamples = widget.source.samples;
+    });
     switch (widget.scalingAlgorithmType) {
       case ScalingAlgorithmType.none:
         samples = tempSamples;
