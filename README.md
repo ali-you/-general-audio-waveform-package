@@ -25,7 +25,7 @@ To start using the General Audio Waveforms package, follow these steps:
 
 1. Add the package to your `pubspec.yaml` file:
 
-  general_audio_waveforms: ^0.0.5
+  general_audio_waveforms: ^0.0.6
 
 
 2. Import the package in your Dart code:
