@@ -3,5 +3,5 @@ abstract class WaveSource {
 
   WaveSource({this.samples = const []});
 
-  Future<void> evaluate();
+  Future<List<double>> evaluate();
 }

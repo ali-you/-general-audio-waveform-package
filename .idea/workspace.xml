@@ -4,30 +4,18 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfb99b1c-5055-4169-88d4-5cc3da552525" name="Changes" comment="version 0.0.4 published">
+    <list default="true" id="cfb99b1c-5055-4169-88d4-5cc3da552525" name="Changes" comment="fixed awaits and get samples">
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/test/widget_test.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/core/audio_waveform.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/core/audio_waveform.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/core/waveform_painters_ab.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/core/waveform_painters_ab.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/data/common/scaling_algorithm_type.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data/common/scaling_algorithm_type.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/data/decoder/decoder.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data/decoder/decoder.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/data/scaling/average_algorithm.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data/scaling/average_algorithm.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/data/scaling/median_algorithm.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data/scaling/median_algorithm.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/data/scaling/scaling_algorithm.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data/scaling/scaling_algorithm.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/example/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/.dart_tool/version" beforeDir="false" afterPath="$PROJECT_DIR$/example/.dart_tool/version" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/local.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/data/source/audio_asset_source.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data/source/audio_asset_source.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/data/source/audio_data_source.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data/source/audio_data_source.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/data/source/audio_file_source.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data/source/audio_file_source.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/data/source/audio_network_source.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data/source/audio_network_source.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/data/source/wave_source.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data/source/wave_source.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/general_audio_waveform.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/general_audio_waveform.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/general_audio_waveform_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/general_audio_waveform_data.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/waveforms/common/waveform.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/waveforms/common/waveform.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/waveforms/common/waveform_style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/waveforms/common/waveform_style.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/waveforms/common/waveform_type.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/waveforms/common/waveform_type.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/waveforms/pulse_waveform/active_waveform_painter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/waveforms/pulse_waveform/active_waveform_painter.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/waveforms/pulse_waveform/inactive_waveform_painter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/waveforms/pulse_waveform/inactive_waveform_painter.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/waveforms/pulse_waveform/pulse_waveform.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/waveforms/pulse_waveform/pulse_waveform.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/general_audio_waveforms_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/general_audio_waveforms_test.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,23 +63,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/aliyou/StudioProjects/bot-mobile&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;flutter.settings&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cidr.known.project.marker": "true",
+    "com.google.services.firebase.aqiPopupShown": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "io.flutter.reload.alreadyRun": "true",
+    "last_opened_file_path": "/home/aliyou/StudioProjects/bot-mobile",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "flutter.settings",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib/src/waveforms/common" />
@@ -239,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697978186849</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="fixed awaits and get samples">
+      <created>1698134281208</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1698134281208</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -284,6 +280,7 @@
     <MESSAGE value="input data types classes separated" />
     <MESSAGE value="dependencies updated" />
     <MESSAGE value="version 0.0.4 published" />
-    <option name="LAST_COMMIT_MESSAGE" value="version 0.0.4 published" />
+    <MESSAGE value="fixed awaits and get samples" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed awaits and get samples" />
   </component>
 </project>

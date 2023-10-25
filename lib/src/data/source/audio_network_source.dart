@@ -6,8 +6,9 @@ class AudioNetworkSource extends WaveSource {
   AudioNetworkSource({required this.path});
 
   @override
-  Future<void> evaluate() async {
+  Future<List<double>> evaluate() async {
     samples = [];
     // TODO: implement this method
+    return [];
   }
 }

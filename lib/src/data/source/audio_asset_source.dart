@@ -15,7 +15,7 @@ class AudioAssetSource extends WaveSource {
   AudioAssetSource({required this.path});
 
   @override
-  Future<void> evaluate() async {
+  Future<List<double>> evaluate() async {
     // Load the asset data as bytes
     ByteData assetData = await rootBundle.load(path);
     // var numChannels = 1;
@@ -34,7 +34,7 @@ class AudioAssetSource extends WaveSource {
 
     if (!fileExist) {
       FFmpegSession session = await FFmpegKit.executeAsync(
-          '-i $pcmPath -vn -acodec pcm_s16le -ar 44100 -ac 2 $wavPath');
+          '-y -i $pcmPath -vn -acodec pcm_s16le -ar 44100 -ac 2 $wavPath');
       canGetWave = ReturnCode.isSuccess(await session.getReturnCode());
       if (!canGetWave) {
         throw "Error: ${await session.getLogsAsString()}";
@@ -49,5 +49,6 @@ class AudioAssetSource extends WaveSource {
           .map((e) => e.toDouble())
           .toList();
     }
+    return samples;
   }
 }
