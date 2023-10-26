@@ -16,7 +16,6 @@ class GeneralAudioWaveform extends StatefulWidget {
   final int? maxSamples;
   final double? height;
   final double? width;
-  final Widget? loadingWidget;
 
   final Duration maxDuration;
   final Duration elapsedDuration;
@@ -44,7 +43,6 @@ class GeneralAudioWaveform extends StatefulWidget {
     this.waveformAlignment = WaveformAlignment.center,
     this.waveformStyle,
     this.scrollable = true,
-    this.loadingWidget,
   });
 
   @override
@@ -62,43 +60,36 @@ class _GeneralAudioWaveformState extends State<GeneralAudioWaveform> {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: setSamples(),
-      builder: (context, snapshot) {
-        return SizedBox(
-          width: widget.width ?? MediaQuery.sizeOf(context).width * 0.5,
-          height: widget.height ?? 50,
-          child: snapshot.connectionState == ConnectionState.done
-              ? Stack(
-                  alignment: Alignment.bottomCenter,
-                  children: [
-                    Waveform(
-                        width: widget.width  ?? MediaQuery.sizeOf(context).width * 0.5,
-                        height:  widget.height ?? 50,
-                        waveformType: widget.waveformType,
-                        elapsedDuration: widget.elapsedDuration,
-                        maxDuration: widget.maxDuration,
-                        samples: samples),
-                    if (widget.scrollable)
-                      Theme(
-                        data: ThemeData(
-                            sliderTheme: SliderThemeData(
-                                thumbShape: SliderComponentShape.noOverlay,
-                                activeTrackColor: Colors.transparent,
-                                inactiveTrackColor: Colors.transparent,
-                                overlayShape: SliderComponentShape.noThumb)),
-                        child: Slider(
-                            value: ((widget.elapsedDuration).inMilliseconds).toDouble(),
-                            max: ((widget.maxDuration).inMilliseconds).toDouble(),
-                            onChanged: (double value) {
-                              widget.elapsedIsChanged(Duration(milliseconds: value.toInt()));
-                            }),
-                      ),
-                  ],
-                )
-              : widget.loadingWidget ?? const SizedBox.shrink(),
-        );
-      },
+    return SizedBox(
+      width: widget.width ?? MediaQuery.sizeOf(context).width * 0.5,
+      height: widget.height ?? 50,
+      child: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          Waveform(
+              width: widget.width  ?? MediaQuery.sizeOf(context).width * 0.5,
+              height:  widget.height ?? 50,
+              waveformType: widget.waveformType,
+              elapsedDuration: widget.elapsedDuration,
+              maxDuration: widget.maxDuration,
+              samples: samples),
+          if (widget.scrollable)
+            Theme(
+              data: ThemeData(
+                  sliderTheme: SliderThemeData(
+                      thumbShape: SliderComponentShape.noOverlay,
+                      activeTrackColor: Colors.transparent,
+                      inactiveTrackColor: Colors.transparent,
+                      overlayShape: SliderComponentShape.noThumb)),
+              child: Slider(
+                  value: ((widget.elapsedDuration).inMilliseconds).toDouble(),
+                  max: ((widget.maxDuration).inMilliseconds).toDouble(),
+                  onChanged: (double value) {
+                    widget.elapsedIsChanged(Duration(milliseconds: value.toInt()));
+                  }),
+            ),
+        ],
+      ),
     );
   }
 
