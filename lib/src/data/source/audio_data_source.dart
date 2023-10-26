@@ -4,7 +4,8 @@ class AudioDataSource extends WaveSource {
   AudioDataSource({required super.samples});
 
   @override
-  Future<List<double>> evaluate() {
-    throw UnimplementedError();
+  Future<List<double>> evaluate() async {
+    return super.samples;
+    // throw UnimplementedError();
   }
 }

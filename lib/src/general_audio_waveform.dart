@@ -43,7 +43,8 @@ class GeneralAudioWaveform extends StatefulWidget {
     this.showActiveWaveform = true,
     this.waveformAlignment = WaveformAlignment.center,
     this.waveformStyle,
-    this.scrollable = true, this.loadingWidget,
+    this.scrollable = true,
+    this.loadingWidget,
   });
 
   @override
