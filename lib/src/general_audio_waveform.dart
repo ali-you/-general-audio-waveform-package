@@ -73,6 +73,8 @@ class _GeneralAudioWaveformState extends State<GeneralAudioWaveform> {
                   alignment: Alignment.bottomCenter,
                   children: [
                     Waveform(
+                        width: widget.width  ?? MediaQuery.sizeOf(context).width * 0.5,
+                        height:  widget.height ?? 50,
                         waveformType: widget.waveformType,
                         elapsedDuration: widget.elapsedDuration,
                         maxDuration: widget.maxDuration,

@@ -25,7 +25,7 @@ To start using the General Audio Waveforms package, follow these steps:
 
 1. Add the package to your `pubspec.yaml` file:
 
-  general_audio_waveforms: ^0.0.6
+  general_audio_waveforms: ^0.0.8
 
 
 2. Import the package in your Dart code:
@@ -36,19 +36,21 @@ To start using the General Audio Waveforms package, follow these steps:
 ## Usage
 
 ```dart
+
 GeneralAudioWaveform(
   scalingAlgorithmType: ScalingAlgorithmType.average,
+  source: AudioAssetSource(path: "assets/sample.mp3"),
+  maxSamples: 20,
   waveformType: WaveformType.pulse,
   maxDuration: maxDuration,
-  elapsedDuration: elapsedDuration,
-  elapsedIsChanged: (newTime){
+  elapsedDuration: elapsedTime,
+  elapsedIsChanged: (d) {
     setState(() {
-      elapsedDuration = newTime;
+      elapsedTime = d;
     });
   },
-  // source: AudioAssetSource(assetName: "/assets/sample.mp3"),
-  source: AudioFileSource(path: path),
 ),
+
 ```
 For more examples and detailed usage instructions, refer to the example directory in the package repository.
 

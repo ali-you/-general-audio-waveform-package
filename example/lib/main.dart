@@ -96,6 +96,7 @@ class _MyHomePageState extends State<MyHomePage> {
             GeneralAudioWaveform(
               scalingAlgorithmType: ScalingAlgorithmType.average,
               source: AudioAssetSource(path: "assets/sample.mp3"),
+              maxSamples: 20,
               waveformType: WaveformType.pulse,
               maxDuration: maxDuration,
               elapsedDuration: elapsedTime,
@@ -104,10 +105,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   elapsedTime = d;
                 });
               },
-
-              // source: AudioFileSource(path: path),
-              // height: 50,
-              // width: MediaQuery.of(context).size.width * 0.5 ,maxSamples: 50,
             ),
 
             TextButton(

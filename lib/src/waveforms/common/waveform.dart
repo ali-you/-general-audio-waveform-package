@@ -10,16 +10,16 @@ class Waveform extends StatelessWidget {
       {super.key,
       required this.waveformType,
       this.waveformStyle,
-      this.height,
-      this.width,
+      required this.height,
+      required this.width,
       required this.elapsedDuration,
       required this.maxDuration,
       this.samples});
 
   final WaveformType waveformType;
   final WaveformStyle? waveformStyle;
-  final double? height;
-  final double? width;
+  final double height;
+  final double width;
   final Duration maxDuration;
   final Duration elapsedDuration;
   final List<double>? samples;
@@ -29,14 +29,13 @@ class Waveform extends StatelessWidget {
     switch (waveformType) {
       case WaveformType.pulse:
         return PulseWaveform(
-          height: height ?? 100,
-          width: width ?? MediaQuery.sizeOf(context).width * 0.5,
+          height: height,
+          width: width,
           inactiveColor: waveformStyle?.inactiveColor ?? Colors.black38,
           activeColor: waveformStyle?.activeColor ?? Colors.blueAccent,
           showActiveWaveform: waveformStyle?.showActiveWaveform ?? true,
           activeBorderColor: waveformStyle?.activeBorderColor ?? Colors.white,
-          inactiveBorderColor:
-              waveformStyle?.inactiveBorderColor ?? Colors.white,
+          inactiveBorderColor: waveformStyle?.inactiveBorderColor ?? Colors.white,
           borderWidth: waveformStyle?.borderWidth ?? 0,
           isRoundedRectangle: waveformStyle?.isRoundedRectangle ?? false,
           elapsedDuration: elapsedDuration,
@@ -49,14 +48,13 @@ class Waveform extends StatelessWidget {
         );
       case WaveformType.rectangle:
         return RectangleWaveform(
-          height: height ?? 100,
-          width: width ?? MediaQuery.sizeOf(context).width * 0.5,
+          height: height,
+          width: width,
           inactiveColor: waveformStyle?.inactiveColor ?? Colors.black38,
           activeColor: waveformStyle?.activeColor ?? Colors.blueAccent,
           showActiveWaveform: waveformStyle?.showActiveWaveform ?? true,
           activeBorderColor: waveformStyle?.activeBorderColor ?? Colors.white,
-          inactiveBorderColor:
-              waveformStyle?.inactiveBorderColor ?? Colors.white,
+          inactiveBorderColor: waveformStyle?.inactiveBorderColor ?? Colors.white,
           borderWidth: waveformStyle?.borderWidth ?? 0,
           isRoundedRectangle: waveformStyle?.isRoundedRectangle ?? false,
           elapsedDuration: elapsedDuration,
@@ -69,8 +67,8 @@ class Waveform extends StatelessWidget {
         );
       case WaveformType.curved:
         return CurvedPolygonWaveform(
-          height: height ?? 100,
-          width: width ?? MediaQuery.sizeOf(context).width * 0.5,
+          height: height,
+          width: width,
           inactiveColor: waveformStyle?.inactiveColor ?? Colors.black38,
           activeColor: waveformStyle?.activeColor ?? Colors.blueAccent,
           showActiveWaveform: waveformStyle?.showActiveWaveform ?? true,
@@ -82,8 +80,8 @@ class Waveform extends StatelessWidget {
         );
       case WaveformType.polygon:
         return PolygonWaveform(
-          height: height ?? 100,
-          width: width ?? MediaQuery.sizeOf(context).width * 0.5,
+          height: height,
+          width: width,
           inactiveColor: waveformStyle?.inactiveColor ?? Colors.black38,
           activeColor: waveformStyle?.activeColor ?? Colors.blueAccent,
           showActiveWaveform: waveformStyle?.showActiveWaveform ?? true,
