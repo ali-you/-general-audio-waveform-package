@@ -42,15 +42,16 @@ class _MyHomePageState extends State<MyHomePage> {
   String path = "/storage/emulated/0/Download/file_example_MP3_700KB.mp3";
 
   @override
-  void initState() {Timer.periodic(const Duration(seconds: 1), (timer) {
-      if (elapsedTime.inSeconds < maxDuration.inSeconds) {
-        setState(() {
-          elapsedTime += const Duration(seconds: 1);
-        });
-      } else {
-        timer.cancel();
-      }
-    });
+  void initState() {
+    // Timer.periodic(const Duration(seconds: 1), (timer) {
+    //   if (elapsedTime.inSeconds < maxDuration.inSeconds) {
+    //     setState(() {
+    //       elapsedTime += const Duration(seconds: 1);
+    //     });
+    //   } else {
+    //     timer.cancel();
+    //   }
+    // });
     super.initState();
   }
 
@@ -77,10 +78,13 @@ class _MyHomePageState extends State<MyHomePage> {
               scalingAlgorithmType: ScalingAlgorithmType.average,
               source: AudioAssetSource(path: "assets/sample.mp3"),
               // source: AudioDataSource(samples: [1,2,3,4,5,6,7,8,9,1,2,3,4,4,5,6,7,12,1,1,1,3,4,5,6,9]),
-              maxSamples: 50,
+              maxSamples: 100,
               waveformType: WaveformType.pulse,
               maxDuration: maxDuration,
               elapsedDuration: elapsedTime,
+              waveformStyle: WaveformStyle(
+                activeColor: Colors.red
+              ),
               elapsedIsChanged: (d) {
                 setState(() {
                   elapsedTime = d;

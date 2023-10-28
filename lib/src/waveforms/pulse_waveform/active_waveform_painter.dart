@@ -52,12 +52,12 @@ class PulseActiveWaveformPainter extends ActiveWaveformPainter {
       //Draws the filled rectangles of the waveform.
       canvas
         ..drawRect(
-          Rect.fromLTWH(x, alignPosition, sampleWidth, y),
+          Rect.fromLTWH(x, alignPosition, sampleWidth, y  * 2),
           paint,
         )
         //Draws the border for the rectangles of the waveform.
         ..drawRect(
-          Rect.fromLTWH(x, alignPosition, sampleWidth, y),
+          Rect.fromLTWH(x, alignPosition, sampleWidth, y * 2),
           borderPaint,
         );
     }

@@ -63,7 +63,7 @@ class _GeneralAudioWaveformState extends State<GeneralAudioWaveform> {
     return SizedBox(
       width: widget.width ?? MediaQuery.sizeOf(context).width * 0.5,
       height: widget.height ?? 50,
-      child: Stack(
+      child: (samples!= null) ? Stack(
         alignment: Alignment.bottomCenter,
         children: [
           Waveform(
@@ -72,6 +72,7 @@ class _GeneralAudioWaveformState extends State<GeneralAudioWaveform> {
               waveformType: widget.waveformType,
               elapsedDuration: widget.elapsedDuration,
               maxDuration: widget.maxDuration,
+              waveformStyle: widget.waveformStyle,
               samples: samples),
           if (widget.scrollable)
             Theme(
@@ -89,7 +90,7 @@ class _GeneralAudioWaveformState extends State<GeneralAudioWaveform> {
                   }),
             ),
         ],
-      ),
+      ) : const SizedBox.shrink(),
     );
   }
 
